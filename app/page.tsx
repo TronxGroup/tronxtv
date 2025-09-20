@@ -46,23 +46,8 @@ export default function Page() {
           <div className="mt-6">
             <ValueGrid />
           </div>
-
-          <div className="card p-6 mt-8">
-            <h3 className="h3">Planes y monetización</h3>
-            <p className="p mt-2">
-              A medida que el canal escala (1K → 5K → 10K+ subs), se habilitan paquetes editoriales y comerciales.
-            </p>
-            <ul className="grid md:grid-cols-2 gap-3 mt-4 text-white/80">
-              <li>• Episodio editorial + video empresa: $1.200.000 – $1.800.000 (1.000 subs)</li>
-              <li>• Episodio + Pack comercial completo: $2.000.000 – $2.800.000 (3.000–5.000 subs)</li>
-              <li>• Episodio premium + pauta digital: desde $3.500.000 (5.000–10.000 subs)</li>
-              <li>• Pack completo + reels + estrategia: $4.000.000 – $6.000.000 (50.000 subs)</li>
-              <li>• Premium + pauta + marca integrada: $6.000.000 – $10.000.000+ (100.000 subs)</li>
-            </ul>
-          </div>
         </div>
       </section>
     </>
   );
 }
-
