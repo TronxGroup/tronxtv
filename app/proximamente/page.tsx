@@ -27,14 +27,6 @@ export default function Page() {
           ))}
         </div>
 
-        <div className="card p-6 mt-8">
-          <h2 className="h3">Proyección y visión</h2>
-          <p className="p mt-2">
-            En 18–24 meses, Tronx TV puede consolidarse como referente editorial en Chile.
-            Posibles coproducciones con medios y TV; licenciamiento de formatos como Reality Day o Buen Día, Vecino.
-          </p>
-        </div>
-      </div>
     </section>
   );
 }
