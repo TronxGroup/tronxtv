@@ -153,15 +153,10 @@ export default function Footer() {
         <div className="container flex flex-col md:flex-row items-center justify-between gap-3 text-white/60 text-sm">
           <p>© {new Date().getFullYear()} Tronx TV · Dekaelo Media. Todos los derechos reservados.</p>
           <nav className="flex items-center gap-4">
-            <Link href="/terminos" className="hover:opacity-80">
-              Términos
-            </Link>
-            <Link href="/privacidad" className="hover:opacity-80">
-              Privacidad
-            </Link>
-            <Link href="/prensa" className="hover:opacity-80">
-              Kit de prensa
-            </Link>
+            {/* Un solo enlace a la página combinada (como aún no existe, usamos <a> para evitar typedRoutes) */}
+            <a href="/privacidad-condiciones" className="hover:opacity-80">
+              Privacidad & Condiciones
+            </a>
           </nav>
         </div>
       </div>
