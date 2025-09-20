@@ -9,7 +9,9 @@ export default function Page() {
       <section className="section">
         <div className="container">
           <h2 className="h2">Programas originales</h2>
-          <p className="p mt-2">Realidad + narrativa + estética cinematográfica. Publicación por temporada. Todo en 4K UHD.</p>
+          <p className="p mt-2">
+            Realidad + narrativa + estética cinematográfica. Publicación por temporada. Todo en 4K UHD.
+          </p>
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             <ProgramCard
               title="Reality Day"
@@ -22,14 +24,14 @@ export default function Page() {
               title="Buen Día, Vecino"
               desc="Serie comunitaria y territorial: barrios, municipios y juntas vecinales desde adentro. Cercano e inclusivo."
               image="/buen_dia_vecino.jpg"
-              href="/programas#bdv"
+              href={{ pathname: "/programas", hash: "bdv" }}
               badge="En desarrollo"
             />
             <ProgramCard
               title="Vodcast Tronx"
               desc="Conversaciones con personajes interesantes sobre cultura pop, actualidad y vida real chilena."
               image="/vodcast.jpg"
-              href="/programas#vodcast"
+              href={{ pathname: "/programas", hash: "vodcast" }}
               badge="En desarrollo"
             />
           </div>
@@ -47,7 +49,9 @@ export default function Page() {
 
           <div className="card p-6 mt-8">
             <h3 className="h3">Planes y monetización</h3>
-            <p className="p mt-2">A medida que el canal escala (1K → 5K → 10K+ subs), se habilitan paquetes editoriales y comerciales.</p>
+            <p className="p mt-2">
+              A medida que el canal escala (1K → 5K → 10K+ subs), se habilitan paquetes editoriales y comerciales.
+            </p>
             <ul className="grid md:grid-cols-2 gap-3 mt-4 text-white/80">
               <li>• Episodio editorial + video empresa: $1.200.000 – $1.800.000 (1.000 subs)</li>
               <li>• Episodio + Pack comercial completo: $2.000.000 – $2.800.000 (3.000–5.000 subs)</li>
@@ -61,3 +65,4 @@ export default function Page() {
     </>
   );
 }
+
