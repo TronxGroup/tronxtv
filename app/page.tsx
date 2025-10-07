@@ -11,6 +11,7 @@ function Hero() {
         fill
         priority
         className="object-cover object-center brightness-60"
+        sizes="100vw"
       />
 
       {/* Overlay cinematográfico */}
@@ -24,21 +25,22 @@ function Hero() {
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-4xl px-6">
-        <div className="mx-auto mb-6 w-24 h-24 md:w-28 md:h-28 relative">
+      <div className="relative z-10 w-full max-w-3xl px-6">
+        <div className="mx-auto mb-6 w-16 h-16 md:w-20 md:h-20 relative">
           <Image
             src="/2025_logo_tronx_tv.png"
             alt="Logo Tronx TV"
             fill
             className="object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
             priority
+            sizes="(max-width: 768px) 64px, 80px"
           />
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
           Tronx TV
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed">
+        <p className="mt-6 text-base md:text-xl text-white/80 leading-relaxed">
           Historias que trascienden fronteras. Un canal editorial multiplataforma
           que recorre territorios, culturas y personas desde Chile hacia el mundo.
         </p>
@@ -47,7 +49,9 @@ function Hero() {
         <div className="mt-8 space-y-1 text-white/90">
           <p className="text-sm md:text-base">¿Eres empresa o institución?</p>
           <p className="text-sm md:text-base">Sumemos un episodio o coproducción. Conversemos.</p>
-          <p className="font-medium">📧 <a href="mailto:info@tronxtv.com" className="underline-offset-4 hover:underline">info@tronxtv.com</a></p>
+          <p className="font-medium">
+            📧 <a href="mailto:info@tronxtv.com" className="underline-offset-4 hover:underline">info@tronxtv.com</a>
+          </p>
         </div>
       </div>
     </section>
@@ -60,18 +64,19 @@ export default function Page() {
       <Hero />
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-white/10">
+      <footer className="mt-auto border-t border-white/10 bg-black/80 backdrop-blur">
         <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="relative w-10 h-10">
+            <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
                 src="/2025_logo_tronx_tv.png"
                 alt="Tronx TV"
                 fill
                 className="object-contain"
+                sizes="40px"
               />
             </div>
-            <div className="text-sm text-white/70">
+            <div className="text-xs md:text-sm text-white/70">
               © {new Date().getFullYear()} Tronx TV — Tronx Group. Todos los derechos reservados.
             </div>
           </div>
