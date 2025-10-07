@@ -1,3 +1,5 @@
+import "./globals.css"; // 👈 necesario para que Tailwind aplique
+
 export const metadata = {
   metadataBase: new URL("https://tronxtv.com"),
   title: "Tronx TV — Próximamente",
@@ -12,11 +14,9 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tronx TV — Próximamente",
-    description: "Historias que trascienden fronteras. Un proyecto de Tronx Group."
+    description: "Historias que trascienden fronteras. Un proyecto de Tronx Group.",
   },
-  robots: {
-    index: true, follow: true
-  }
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
