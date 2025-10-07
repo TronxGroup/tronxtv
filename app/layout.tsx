@@ -1,4 +1,4 @@
-import "./globals.css"; // 👈 necesario para que Tailwind aplique
+import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL("https://tronxtv.com"),
@@ -17,6 +17,11 @@ export const metadata = {
     description: "Historias que trascienden fronteras. Un proyecto de Tronx Group.",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/favicon_tronxtv.jpg",
+    shortcut: "/favicon_tronxtv.jpg",
+    apple: "/favicon_tronxtv.jpg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
