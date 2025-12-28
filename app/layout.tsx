@@ -18,9 +18,9 @@ export const metadata = {
   },
   robots: { index: true, follow: true },
   icons: {
-    icon: "/favicon_tronxtv.jpg",
-    shortcut: "/favicon_tronxtv.jpg",
-    apple: "/favicon_tronxtv.jpg",
+    icon: "/favicon_tronxtv.png",
+    shortcut: "/favicon_tronxtv.png",
+    apple: "/favicon_tronxtv.png",
   },
 };
 
