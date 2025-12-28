@@ -1,17 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowRight,
-  Play,
-  Film,
-  Mail,
-  Youtube,
-  Instagram,
-  Facebook,
-  Music2, // good enough icon for TikTok vibe (lucide doesn't have official tiktok)
-} from "lucide-react";
 
 const EP1 = {
   title: "Reality Day | El mimbre no espera — Un día real de trabajo",
@@ -28,11 +17,37 @@ Subtítulos disponibles en español e inglés.`,
 };
 
 const SOCIALS = [
-  { name: "YouTube", href: "https://www.youtube.com/@tronxtv", icon: Youtube },
-  { name: "Instagram", href: "https://www.instagram.com/tronxtv/", icon: Instagram },
-  { name: "Facebook", href: "https://web.facebook.com/tronxtv/", icon: Facebook },
-  { name: "TikTok", href: "https://www.tiktok.com/@tronxtv", icon: Music2 },
+  { name: "YouTube", href: "https://www.youtube.com/@tronxtv" },
+  { name: "Instagram", href: "https://www.instagram.com/tronxtv/" },
+  { name: "Facebook", href: "https://web.facebook.com/tronxtv/" },
+  { name: "TikTok", href: "https://www.tiktok.com/@tronxtv" },
 ];
+
+function IconPlay({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
+      <path d="M8 5v14l11-7z" />
+    </svg>
+  );
+}
+
+function IconArrowRight({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M5 12h12" />
+      <path d="M13 6l6 6-6 6" />
+    </svg>
+  );
+}
+
+function IconMail({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M4 6h16v12H4z" />
+      <path d="M4 7l8 6 8-6" />
+    </svg>
+  );
+}
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
@@ -42,15 +57,7 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PrimaryButton({
-  href,
-  children,
-  icon: Icon,
-}: {
-  href: string;
-  children: React.ReactNode;
-  icon?: React.ElementType;
-}) {
+function PrimaryButton({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <a
       href={href}
@@ -58,9 +65,8 @@ function PrimaryButton({
       rel="noreferrer"
       className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 text-sm md:text-base font-semibold shadow-[0_10px_30px_rgba(0,0,0,0.45)] hover:opacity-90 transition"
     >
-      {Icon ? <Icon className="w-5 h-5" /> : null}
       {children}
-      <ArrowRight className="w-4 h-4" />
+      <IconArrowRight />
     </a>
   );
 }
@@ -69,8 +75,6 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noreferrer"
       className="inline-flex items-center justify-center rounded-2xl bg-white/10 text-white px-5 py-3 text-sm md:text-base font-semibold border border-white/15 hover:bg-white/15 transition"
     >
       {children}
@@ -81,9 +85,8 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center text-white overflow-hidden">
-      {/* Fondo */}
       <Image
-        src="/bg_tronxtv.png"
+        src="/bg_tronxtv.jpg"
         alt="Tronx TV"
         fill
         priority
@@ -91,16 +94,13 @@ function Hero() {
         sizes="100vw"
       />
 
-      {/* Overlay cinematográfico */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
 
-      {/* Banda superior */}
       <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
         <Pill>Plataforma editorial</Pill>
         <Pill>Programas originales</Pill>
       </div>
 
-      {/* Contenido */}
       <div className="relative z-10 w-full max-w-5xl px-6 py-10">
         <div className="flex flex-col items-center text-center">
           <div className="mx-auto mb-6 w-16 h-16 md:w-20 md:h-20 relative">
@@ -119,34 +119,37 @@ function Hero() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-base md:text-xl text-white/85 leading-relaxed">
-            Plataforma de contenido audiovisual original.
-            Documental, conversación y formatos observacionales.
+            Plataforma de contenido audiovisual original. Documental, conversación y formatos observacionales.
             <span className="text-white/90 font-medium"> Realidad sin guión, sin intervención.</span>
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
-            <PrimaryButton href={EP1.url} icon={Play}>
+            <a
+              href={EP1.url}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-5 py-3 text-sm md:text-base font-semibold shadow-[0_10px_30px_rgba(0,0,0,0.45)] hover:opacity-90 transition"
+            >
+              <IconPlay className="w-5 h-5" />
               Ver Episodio 1
-            </PrimaryButton>
+              <IconArrowRight className="w-4 h-4" />
+            </a>
+
             <SecondaryButton href="#programas">Explorar programas</SecondaryButton>
           </div>
 
-          {/* Contacto institucional */}
           <div className="mt-10 w-full max-w-3xl rounded-3xl border border-white/12 bg-black/35 backdrop-blur px-6 py-5 text-left">
             <div className="flex items-start gap-3">
-              <div className="mt-1">
-                <Mail className="w-5 h-5 text-white/80" />
+              <div className="mt-1 text-white/80">
+                <IconMail />
               </div>
               <div className="flex-1">
                 <p className="text-sm md:text-base text-white/85">
-                  ¿Eres empresa o institución? Podemos producir un episodio o una serie interna/externa con
-                  el mismo estándar editorial.
+                  ¿Eres empresa o institución? Podemos producir un episodio o una serie interna/externa con el mismo
+                  estándar editorial.
                 </p>
                 <p className="mt-2 font-semibold">
-                  <a
-                    href="mailto:info@tronxtv.com"
-                    className="underline-offset-4 hover:underline"
-                  >
+                  <a href="mailto:info@tronxtv.com" className="underline-offset-4 hover:underline">
                     info@tronxtv.com
                   </a>
                 </p>
@@ -154,7 +157,6 @@ function Hero() {
             </div>
           </div>
 
-          {/* Links sociales compactos */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {SOCIALS.map((s) => (
               <a
@@ -164,7 +166,6 @@ function Hero() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs md:text-sm border border-white/12 hover:bg-white/15 transition"
               >
-                <s.icon className="w-4 h-4" />
                 {s.name}
               </a>
             ))}
@@ -188,9 +189,7 @@ function SectionTitle({
     <div className="max-w-3xl">
       <div className="text-xs tracking-widest uppercase text-white/50">{kicker}</div>
       <h2 className="mt-3 text-2xl md:text-4xl font-extrabold">{title}</h2>
-      {description ? (
-        <p className="mt-4 text-white/75 leading-relaxed">{description}</p>
-      ) : null}
+      {description ? <p className="mt-4 text-white/75 leading-relaxed">{description}</p> : null}
     </div>
   );
 }
@@ -198,9 +197,7 @@ function SectionTitle({
 function EpisodeCard() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 rounded-3xl border border-white/10 bg-white/5 overflow-hidden">
-      {/* Preview / Thumbnail */}
       <div className="relative lg:col-span-7 min-h-[260px]">
-        {/* Recomendación: guarda una miniatura local en /public/ep1_thumb.jpg */}
         <Image
           src="/ep1_thumb.jpg"
           alt="Episodio 1 — El mimbre no espera"
@@ -212,9 +209,7 @@ function EpisodeCard() {
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
           <div>
             <div className="text-xs text-white/70">{EP1.meta}</div>
-            <div className="mt-1 text-lg md:text-2xl font-extrabold leading-tight">
-              El mimbre no espera
-            </div>
+            <div className="mt-1 text-lg md:text-2xl font-extrabold leading-tight">El mimbre no espera</div>
             <div className="mt-1 text-xs md:text-sm text-white/70">{EP1.location}</div>
           </div>
           <a
@@ -223,34 +218,30 @@ function EpisodeCard() {
             rel="noreferrer"
             className="shrink-0 inline-flex items-center gap-2 rounded-2xl bg-white text-black px-4 py-2 text-sm font-semibold hover:opacity-90 transition"
           >
-            <Play className="w-4 h-4" />
+            <IconPlay className="w-4 h-4" />
             Ver
           </a>
         </div>
       </div>
 
-      {/* Texto */}
       <div className="lg:col-span-5 p-6 md:p-8">
-        <div className="flex items-center gap-2 text-white/70">
-          <Film className="w-4 h-4" />
-          <span className="text-xs tracking-widest uppercase">Reality Day</span>
-        </div>
-
-        <h3 className="mt-3 text-xl md:text-2xl font-extrabold">
-          Episodio 1
-        </h3>
+        <div className="text-xs tracking-widest uppercase text-white/60">Reality Day</div>
+        <h3 className="mt-3 text-xl md:text-2xl font-extrabold">Episodio 1</h3>
 
         <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed whitespace-pre-line">
           {EP1.description}
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row gap-3">
-          <PrimaryButton href={EP1.url} icon={Youtube}>
-            Ver en YouTube
-          </PrimaryButton>
-          <SecondaryButton href="https://www.youtube.com/@tronxtv">
+          <PrimaryButton href={EP1.url}>Ver en YouTube</PrimaryButton>
+          <a
+            href="https://www.youtube.com/@tronxtv"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-2xl bg-white/10 text-white px-5 py-3 text-sm md:text-base font-semibold border border-white/15 hover:bg-white/15 transition"
+          >
             Suscribirse
-          </SecondaryButton>
+          </a>
         </div>
       </div>
     </div>
@@ -271,13 +262,12 @@ function Programas() {
           <EpisodeCard />
         </div>
 
-        {/* Espacio para futuros programas */}
         <div className="mt-10 rounded-3xl border border-white/10 bg-black/30 p-6 md:p-8">
           <div className="text-xs tracking-widest uppercase text-white/50">Tronx TV</div>
           <div className="mt-2 text-lg md:text-xl font-extrabold">Nuevos programas</div>
           <p className="mt-3 text-sm md:text-base text-white/70 leading-relaxed">
-            Tronx TV es una plataforma: Reality Day es uno de nuestros formatos.
-            A futuro, publicaremos nuevas series y programas (documental, conversación y formatos especiales).
+            Tronx TV es una plataforma: Reality Day es uno de nuestros formatos. A futuro, publicaremos nuevas series y
+            programas (documental, conversación y formatos especiales).
           </p>
         </div>
       </div>
@@ -291,13 +281,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <div className="relative w-9 h-9 md:w-10 md:h-10">
-            <Image
-              src="/2025_logo_tronx_tv.png"
-              alt="Tronx TV"
-              fill
-              className="object-contain"
-              sizes="40px"
-            />
+            <Image src="/2025_logo_tronx_tv.png" alt="Tronx TV" fill className="object-contain" sizes="40px" />
           </div>
           <div className="text-xs md:text-sm text-white/60">
             © {new Date().getFullYear()} Tronx TV — Tronx Group. Todos los derechos reservados.
@@ -311,9 +295,8 @@ function Footer() {
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs md:text-sm border border-white/12 hover:bg-white/15 transition"
+              className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs md:text-sm border border-white/12 hover:bg-white/15 transition"
             >
-              <s.icon className="w-4 h-4" />
               {s.name}
             </a>
           ))}
