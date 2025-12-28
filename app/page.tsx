@@ -9,7 +9,7 @@ const EP1 = {
   meta: "Episodio 1 — El mimbre no espera",
   description: `Hay trabajos que no se pueden apurar, y días que no esperan.
 
-En este primer episodio de Reality Day, acompañamos a Milenko Pradenas durante una jornada real de trabajo en Artesanía Pradena, un taller familiar con más de 50 años dedicado al mimbre y la restauración.
+En este primer episodio de Reality Day, acompañamos a Milenco Pradena durante una jornada real de trabajo en Artesanía Pradena, un taller familiar con más de 50 años dedicado al mimbre y la restauración.
 
 Sin guión, sin intervención y sin personajes forzados, este episodio observa el ritmo real del oficio: clientes, decisiones, problemas cotidianos y el peso del tiempo en un trabajo hecho a mano.
 
