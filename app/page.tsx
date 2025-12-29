@@ -536,7 +536,7 @@ function Contacto() {
           </div>
 
           <div className="mt-8 border-t border-white/10 pt-6 text-xs text-white/50 leading-relaxed">
-            © {new Date().getFullYear()} Tronx TV — Tronx Group. Todos los derechos reservados.
+            © {new Date().getFullYear()} Tronx TV — Todos los derechos reservados.
           </div>
         </div>
       </div>
