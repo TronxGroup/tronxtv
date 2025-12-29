@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/2025_logo_tronx_tv.png",
+        url: "/favicon_tronxtv.png",
         type: "image/png",
         sizes: "512x512",
       },
     ],
     apple: [
       {
-        url: "/2025_logo_tronx_tv.png",
+        url: "/favicon_tronxtv.png",
         sizes: "180x180",
       },
     ],
