@@ -166,16 +166,23 @@ function SectionTitle({
 
 function TopNav() {
   return (
-    <header className="absolute top-0 left-0 right-0 z-20">
+    <header className="absolute top-0 left-0 right-0 z-30">
       <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <a href="#" className="inline-flex items-center gap-3">
-          <span className="relative w-9 h-9">
-            <Image src="/2025_logo_tronx_tv.png" alt="Tronx TV" fill className="object-contain" sizes="36px" />
+        {/* Logo grande, sin texto */}
+        <a href="/" className="inline-flex items-center">
+          <span className="relative w-14 h-14 md:w-16 md:h-16">
+            <Image
+              src="/2025_logo_tronx_tv.png"
+              alt="Tronx TV"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 56px, 64px"
+              priority
+            />
           </span>
-          <span className="text-sm tracking-widest uppercase text-white/80">Tronx TV</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-4 text-xs text-white/70">
+        <nav className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase text-white/70">
           <a href="#programas" className="hover:text-white transition">
             Programas
           </a>
@@ -199,78 +206,95 @@ function Hero() {
     <section className="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden">
       <TopNav />
 
+      {/* Fondo */}
       <Image
         src="/bg_tronxtv.jpg"
-        alt="Tronx TV — Fondo"
+        alt="Tronx TV — Fondo editorial"
         fill
         priority
         className="object-cover object-center brightness-[0.55]"
         sizes="100vw"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/90" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/55 to-black/90" />
 
-      <div className="absolute top-24 left-1/2 -translate-x-1/2 z-10 flex flex-wrap items-center justify-center gap-2 px-6">
-        <Pill>Canal / plataforma</Pill>
+      {/* Pills superiores */}
+      <div className="absolute top-28 left-1/2 -translate-x-1/2 z-10 flex flex-wrap items-center justify-center gap-2 px-6">
+        <Pill>Canal editorial</Pill>
         <Pill>Programas originales</Pill>
-        <Pill>Mirada editorial</Pill>
+        <Pill>Realidad sin guión</Pill>
       </div>
 
-      <div className="relative z-10 w-full max-w-6xl px-6 py-16">
+      {/* Contenido principal */}
+      <div className="relative z-10 w-full max-w-6xl px-6 pt-32 pb-20">
         <div className="flex flex-col items-center text-center">
-          <div className="mx-auto mb-6 w-16 h-16 md:w-20 md:h-20 relative">
-            <Image
-              src="/2025_logo_tronx_tv.png"
-              alt="Logo Tronx TV"
-              fill
-              className="object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
-              priority
-              sizes="(max-width: 768px) 64px, 80px"
-            />
-          </div>
+          {/* Título */}
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">
+            Tronx TV
+          </h1>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg">{SITE.name}</h1>
-
-          <p className="mt-4 text-sm md:text-base tracking-widest uppercase text-white/60">{SITE.tagline}</p>
-
-          <p className="mt-6 max-w-3xl text-base md:text-xl text-white/85 leading-relaxed">
-            Tronx TV es un canal de contenido audiovisual original: documental, conversación y formatos observacionales.
-            <span className="text-white/90 font-medium"> Distintos programas, una sola regla: realidad sin guión.</span>
+          {/* Tagline */}
+          <p className="mt-4 text-xs md:text-sm tracking-widest uppercase text-white/60">
+            Plataforma editorial de contenido audiovisual
           </p>
 
+          {/* Bajada */}
+          <p className="mt-6 max-w-3xl text-base md:text-xl text-white/85 leading-relaxed">
+            Documental, conversación y formatos observacionales.
+            <span className="text-white/90 font-medium">
+              {" "}
+              Distintos programas, una sola regla: la realidad manda.
+            </span>
+          </p>
+
+          {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3">
-            <PrimaryButton href={EP1.url} ariaLabel="Ver Reality Day Episodio 1 en YouTube">
+            <PrimaryButton href={EP1.url}>
               <IconPlay className="w-5 h-5" />
-              Ver Reality Day (Episodio 1)
+              Ver Reality Day · Episodio 1
             </PrimaryButton>
-            <SecondaryButton href="#programas">Explorar programas</SecondaryButton>
+
+            <SecondaryButton href="#programas">
+              Explorar programas
+            </SecondaryButton>
           </div>
 
-          <div className="mt-10 w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-3">
+          {/* Tarjetas editoriales */}
+          <div className="mt-12 w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="rounded-3xl border border-white/12 bg-black/35 backdrop-blur p-6 text-left">
-              <div className="text-xs tracking-widest uppercase text-white/50">Qué es</div>
-              <div className="mt-2 text-lg font-extrabold">Una vitrina</div>
+              <div className="text-xs tracking-widest uppercase text-white/50">
+                Qué es
+              </div>
+              <div className="mt-2 text-lg font-extrabold">Una vitrina real</div>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                Un archivo vivo de trabajos, oficios, cultura y decisiones reales — episodio a episodio.
+                Un archivo vivo de trabajos, oficios, empresas y decisiones reales.
               </p>
             </div>
+
             <div className="rounded-3xl border border-white/12 bg-black/35 backdrop-blur p-6 text-left">
-              <div className="text-xs tracking-widest uppercase text-white/50">Cómo se mira</div>
-              <div className="mt-2 text-lg font-extrabold">Sin intervención</div>
+              <div className="text-xs tracking-widest uppercase text-white/50">
+                Cómo se mira
+              </div>
+              <div className="mt-2 text-lg font-extrabold">Observacional</div>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                Sin conductor, sin performance. La realidad manda el ritmo.
+                Sin conductor, sin intervención, sin discurso impuesto.
               </p>
             </div>
+
             <div className="rounded-3xl border border-white/12 bg-black/35 backdrop-blur p-6 text-left">
-              <div className="text-xs tracking-widest uppercase text-white/50">Qué viene</div>
-              <div className="mt-2 text-lg font-extrabold">Más programas</div>
+              <div className="text-xs tracking-widest uppercase text-white/50">
+                Qué viene
+              </div>
+              <div className="mt-2 text-lg font-extrabold">Más formatos</div>
               <p className="mt-2 text-sm text-white/70 leading-relaxed">
-                Vodcast, series especiales y temporadas temáticas. Tronx TV crece por formatos.
+                Reality Day, vodcast, series especiales y nuevos programas.
               </p>
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+          {/* Redes */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-2">
             {SITE.socials.map((s) => (
               <a
                 key={s.name}
