@@ -1,26 +1,44 @@
+// app/layout.tsx
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
-  metadataBase: new URL("https://tronxtv.com"),
-  title: "Tronx TV — Próximamente",
-  description: "Canal editorial multiplataforma. Historias que trascienden fronteras.",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.tronxtv.com"),
+  title: {
+    default: "Tronx TV — Plataforma editorial de contenido audiovisual",
+    template: "%s | Tronx TV",
+  },
+  description:
+    "Tronx TV es una plataforma editorial de contenido audiovisual con programas y series originales. Observamos la realidad sin guión ni intervención.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Tronx TV — Próximamente",
-    description: "Historias que trascienden fronteras. Un proyecto de Tronx Group.",
-    url: "https://tronxtv.com",
     type: "website",
-    images: ["/2025_logo_tronx_tv.png"],
+    url: "https://www.tronxtv.com",
+    title: "Tronx TV — Plataforma editorial de contenido audiovisual",
+    description:
+      "Programas y series originales. Documental, conversación y formatos observacionales. Realidad sin guión, sin intervención.",
+    siteName: "Tronx TV",
+    images: [
+      {
+        url: "/og-tronxtv.jpg", // crea esta imagen en /public
+        width: 1200,
+        height: 630,
+        alt: "Tronx TV",
+      },
+    ],
+    locale: "es_CL",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tronx TV — Próximamente",
-    description: "Historias que trascienden fronteras. Un proyecto de Tronx Group.",
+    title: "Tronx TV",
+    description:
+      "Plataforma editorial de contenido audiovisual con programas y series originales.",
+    images: ["/og-tronxtv.jpg"],
   },
-  robots: { index: true, follow: true },
-  icons: {
-    icon: "/favicon_tronxtv.png",
-    shortcut: "/favicon_tronxtv.png",
-    apple: "/favicon_tronxtv.png",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-snippet": -1, "max-image-preview": "large", "max-video-preview": -1 },
   },
 };
 
