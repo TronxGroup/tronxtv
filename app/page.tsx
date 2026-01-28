@@ -9,6 +9,7 @@ import Image from "next/image";
  *  /bg_tronxtv.jpg
  *  /2025_logo_tronx_tv.png
  *  /ep1_thumb.jpg
+ *  /ep2_thumb.jpg
  */
 
 const SITE = {
@@ -29,16 +30,36 @@ const PROGRAMS = [
   { name: "Series especiales", status: "Próximamente" },
 ];
 
-const EP1 = {
-  program: "Reality Day",
-  title: "El mimbre no espera",
-  subtitle: "Un día real de trabajo",
-  url: "https://youtu.be/xiOxzZTb8Q4",
-  meta: "Episodio 1 · 2026",
-  location: "Ñuñoa, Santiago de Chile",
-  description:
-    "Acompañamos una jornada real en Artesanía Pradena: oficio, clientes, decisiones y el peso del tiempo en un trabajo hecho a mano. Subtítulos en español e inglés.",
-};
+const EPISODES = [
+  {
+    id: "ep1",
+    program: "Reality Day",
+    title: "El mimbre no espera",
+    subtitle: "Un día real de trabajo",
+    url: "https://youtu.be/xiOxzZTb8Q4",
+    meta: "Episodio 1 · 2026",
+    location: "Ñuñoa, Santiago de Chile",
+    thumb: "/ep1_thumb.jpg",
+    description:
+      "Acompañamos una jornada real en Artesanía Pradena: oficio, clientes, decisiones y el peso del tiempo en un trabajo hecho a mano. Subtítulos en español e inglés.",
+    editorialNote:
+      "Reality Day observa un día completo sin guión: trabajo, atención a clientes, microdecisiones y ritmo real.",
+  },
+  {
+    id: "ep2",
+    program: "Reality Day",
+    title: "No era solo mantención",
+    subtitle: "Un día real de trabajo",
+    url: "https://youtu.be/4xe4CtPW4lI",
+    meta: "Episodio 2 · 2026",
+    location: "Santiago de Chile",
+    thumb: "/ep2_thumb.jpg",
+    description:
+      "Hay días que parten como cualquier otro, hasta que un auto no vuelve a partir. En este segundo episodio de Reality Day, acompañamos a José Miguel Gallardo y Patricio del Campo durante una jornada real de trabajo en Automotriz JMP, un taller mecánico con más de 20 años de experiencia.",
+    editorialNote:
+      "Sin guión, sin intervención y sin discursos forzados: diagnósticos que no aparecen a simple vista, presión por el tiempo, decisiones técnicas y trabajos que no siempre salen como se planearon. Subtítulos disponibles en español e inglés.",
+  },
+] as const;
 
 function IconPlay({ className = "w-5 h-5" }: { className?: string }) {
   return (
@@ -137,8 +158,8 @@ function TopNav() {
           <a href="#programas" className="hover:text-white transition">
             Programas
           </a>
-          <a href="#episodio" className="hover:text-white transition">
-            Episodio 1
+          <a href="#episodios" className="hover:text-white transition">
+            Episodios
           </a>
           <a href="#proximamente" className="hover:text-white transition">
             Próximamente
@@ -153,6 +174,8 @@ function TopNav() {
 }
 
 function Hero() {
+  const latest = EPISODES[EPISODES.length - 1];
+
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden">
       <TopNav />
@@ -187,11 +210,11 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-3">
-            <PrimaryButton href={EP1.url} ariaLabel="Ver Reality Day Episodio 1 en YouTube">
+            <PrimaryButton href={latest.url} ariaLabel={`Ver ${latest.program} ${latest.meta} en YouTube`}>
               <IconPlay className="w-5 h-5" />
-              Ver {EP1.program} · Episodio 1
+              Ver {latest.program} · {latest.meta}
             </PrimaryButton>
-            <SecondaryButton href="#episodio">Leer sobre el episodio</SecondaryButton>
+            <SecondaryButton href="#episodios">Ver episodios</SecondaryButton>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
@@ -210,7 +233,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* footer line */}
       <div className="absolute bottom-6 left-0 right-0 z-10">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-center gap-3 text-xs tracking-widest uppercase text-white/50">
@@ -221,7 +243,7 @@ function Hero() {
             <span className="text-white/25">/</span>
             <span className="inline-flex items-center gap-2">
               <IconDot className="w-1.5 h-1.5" />
-              Episodio 1 disponible
+              Episodios disponibles
             </span>
             <span className="text-white/25">/</span>
             <span className="inline-flex items-center gap-2">
@@ -243,8 +265,8 @@ function Programas() {
           <div className="text-xs tracking-widest uppercase text-white/50">Programas</div>
           <h2 className="mt-3 text-2xl md:text-4xl font-extrabold">Un canal, varios formatos</h2>
           <p className="mt-4 text-white/75 leading-relaxed">
-            Tronx TV funciona como vitrina editorial. Cada programa mantiene su identidad y ritmo. Hoy: un primer episodio
-            publicado. Mañana: una biblioteca.
+            Tronx TV funciona como vitrina editorial. Cada programa mantiene su identidad y ritmo. Hoy: episodios
+            publicados. Mañana: una biblioteca.
           </p>
         </div>
 
@@ -269,65 +291,78 @@ function Programas() {
   );
 }
 
-function Episodio() {
+function Episodios() {
   return (
-    <section id="episodio" className="w-full">
+    <section id="episodios" className="w-full">
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-20">
-        <div className="rounded-3xl border border-white/10 bg-white/5 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="relative lg:col-span-7 min-h-[320px]">
-            <Image
-              src="/ep1_thumb.jpg"
-              alt={`${EP1.program} — ${EP1.title}`}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
+        <div className="max-w-3xl">
+          <div className="text-xs tracking-widest uppercase text-white/50">Reality Day</div>
+          <h2 className="mt-3 text-2xl md:text-4xl font-extrabold">Episodios</h2>
+          <p className="mt-4 text-white/75 leading-relaxed">
+            Un día real de trabajo, tal como ocurre. Sin guión, sin intervención y sin discursos forzados.
+          </p>
+        </div>
 
-            <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-              <Pill>{EP1.program}</Pill>
-              <span className="text-xs tracking-widest uppercase text-white/70">{EP1.meta}</span>
-            </div>
+        <div className="mt-10 grid grid-cols-1 gap-6">
+          {EPISODES.map((ep) => (
+            <div
+              key={ep.id}
+              className="rounded-3xl border border-white/10 bg-white/5 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-6"
+            >
+              <div className="relative lg:col-span-7 min-h-[320px]">
+                <Image
+                  src={ep.thumb}
+                  alt={`${ep.program} — ${ep.title}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
 
-            <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-              <div>
-                <div className="text-xs text-white/70">{EP1.location}</div>
-                <div className="mt-2 text-lg md:text-2xl font-extrabold leading-tight">{EP1.title}</div>
-                <div className="mt-1 text-xs md:text-sm text-white/70">{EP1.subtitle}</div>
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                  <Pill>{ep.program}</Pill>
+                  <span className="text-xs tracking-widest uppercase text-white/70">{ep.meta}</span>
+                </div>
+
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
+                  <div>
+                    <div className="text-xs text-white/70">{ep.location}</div>
+                    <div className="mt-2 text-lg md:text-2xl font-extrabold leading-tight">{ep.title}</div>
+                    <div className="mt-1 text-xs md:text-sm text-white/70">{ep.subtitle}</div>
+                  </div>
+
+                  <a
+                    href={ep.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 rounded-2xl bg-white text-black px-4 py-2 text-sm font-semibold hover:opacity-90 transition"
+                  >
+                    <IconPlay className="w-4 h-4" />
+                    Ver
+                  </a>
+                </div>
               </div>
 
-              <a
-                href={EP1.url}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 rounded-2xl bg-white text-black px-4 py-2 text-sm font-semibold hover:opacity-90 transition"
-              >
-                <IconPlay className="w-4 h-4" />
-                Ver
-              </a>
+              <div className="lg:col-span-5 p-6 md:p-8">
+                <div className="text-xs tracking-widest uppercase text-white/60">{ep.meta}</div>
+                <h3 className="mt-3 text-xl md:text-2xl font-extrabold">
+                  {ep.program}: {ep.title}
+                </h3>
+
+                <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed">{ep.description}</p>
+
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <PrimaryButton href={ep.url}>Ver en YouTube</PrimaryButton>
+                  <SecondaryButton href={SITE.socials[0].href}>Suscribirse</SecondaryButton>
+                </div>
+
+                <div className="mt-8 border-t border-white/10 pt-5">
+                  <div className="text-xs tracking-widest uppercase text-white/55">Nota editorial</div>
+                  <p className="mt-2 text-xs text-white/60 leading-relaxed">{ep.editorialNote}</p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div className="lg:col-span-5 p-6 md:p-8">
-            <div className="text-xs tracking-widest uppercase text-white/60">Episodio 1</div>
-            <h3 className="mt-3 text-xl md:text-2xl font-extrabold">
-              {EP1.program}: {EP1.title}
-            </h3>
-
-            <p className="mt-4 text-sm md:text-base text-white/75 leading-relaxed">{EP1.description}</p>
-
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <PrimaryButton href={EP1.url}>Ver en YouTube</PrimaryButton>
-              <SecondaryButton href={SITE.socials[0].href}>Suscribirse</SecondaryButton>
-            </div>
-
-            <div className="mt-8 border-t border-white/10 pt-5">
-              <div className="text-xs tracking-widest uppercase text-white/55">Nota editorial</div>
-              <p className="mt-2 text-xs text-white/60 leading-relaxed">
-                Reality Day observa un día completo sin guión: trabajo, atención a clientes, microdecisiones y ritmo real.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -344,8 +379,8 @@ function Proximamente() {
               <div className="text-xs tracking-widest uppercase text-white/50">Próximamente</div>
               <h2 className="mt-2 text-2xl md:text-3xl font-extrabold">Más episodios en camino</h2>
               <p className="mt-3 text-sm md:text-base text-white/75 leading-relaxed">
-                Tronx TV publica por temporadas. El Episodio 1 abre la línea editorial; lo que viene expande el mapa:
-                nuevos oficios, nuevos lugares, nuevas personas.
+                Tronx TV publica por temporadas. Lo que viene expande el mapa: nuevos oficios, nuevos lugares, nuevas
+                personas.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2">
@@ -376,7 +411,7 @@ function Proximamente() {
           <div className="mt-8 border-t border-white/10 pt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <div className="text-xs tracking-widest uppercase text-white/55">Reality Day</div>
-              <div className="mt-2 text-sm font-semibold text-white">Episodios 2+</div>
+              <div className="mt-2 text-sm font-semibold text-white">Episodios 3+</div>
               <p className="mt-2 text-xs text-white/60 leading-relaxed">Más jornadas reales. Más oficio. Más tiempo.</p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -454,7 +489,7 @@ export default function Page() {
     <main className="min-h-screen bg-black text-white">
       <Hero />
       <Programas />
-      <Episodio />
+      <Episodios />
       <Proximamente />
       <Contacto />
     </main>
