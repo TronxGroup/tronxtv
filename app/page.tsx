@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 /**
  * Tronx TV — Studio Home
@@ -11,11 +12,6 @@ const SITE = {
   name: "Tronx TV",
   tagline: "Estudio documental independiente",
   email: "info@tronxtv.com",
-  socials: [
-    { name: "YouTube", href: "https://www.youtube.com/@tronxtv" },
-    { name: "Instagram", href: "https://www.instagram.com/tronxtv/" },
-    { name: "TikTok", href: "https://www.tiktok.com/@tronxtv" },
-  ],
 };
 
 const PROGRAMS = [
@@ -23,13 +19,14 @@ const PROGRAMS = [
     name: "Reality Day",
     status: "En emisión",
     description:
-      "Serie documental que acompaña una jornada completa en oficios, servicios e instituciones. Primer formato original de Tronx TV.",
+      "Serie documental que acompaña una jornada completa en oficios, servicios e instituciones.",
+    href: "/reality-day",
   },
   {
     name: "Vodcast",
     status: "En desarrollo",
     description:
-      "Conversaciones extensas con protagonistas del mundo empresarial e institucional. Ritmo pausado. Profundidad.",
+      "Conversaciones extensas con protagonistas del mundo empresarial e institucional.",
   },
   {
     name: "Series especiales",
@@ -74,52 +71,18 @@ function PrimaryButton({
   children: React.ReactNode;
 }) {
   return (
-    <a
+    <Link
       href={href}
-      target="_blank"
-      rel="noreferrer"
       className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
     >
       {children}
-    </a>
-  );
-}
-
-function TopNav() {
-  return (
-    <header className="absolute top-0 left-0 right-0 z-30">
-      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <a href="/" className="relative w-14 h-14 md:w-16 md:h-16">
-          <Image
-            src="/2025_logo_tronx_tv.png"
-            alt="Tronx TV"
-            fill
-            className="object-contain"
-            priority
-          />
-        </a>
-
-        <nav className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase text-white/70">
-          <a href="#programas" className="hover:text-white transition">
-            Programas
-          </a>
-          <a href="#episodios" className="hover:text-white transition">
-            Episodios
-          </a>
-          <a href="#contacto" className="hover:text-white transition">
-            Producción
-          </a>
-        </nav>
-      </div>
-    </header>
+    </Link>
   );
 }
 
 function Hero() {
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden">
-      <TopNav />
-
       <Image
         src="/bg_tronxtv.jpg"
         alt="Tronx TV"
@@ -146,11 +109,17 @@ function Hero() {
         </p>
 
         <p className="mt-8 text-lg md:text-xl text-white/85 leading-relaxed">
-          Tronx TV desarrolla formatos documentales que observan cómo se toman
+          Desarrollamos formatos documentales que observan cómo se toman
           decisiones reales.
           <br />
-          Oficios, empresas, instituciones y equipos enfrentando el peso de un día completo.
+          Oficios, empresas e instituciones enfrentando el peso de un día completo.
         </p>
+
+        <div className="mt-10">
+          <PrimaryButton href="/reality-day">
+            Explorar Reality Day
+          </PrimaryButton>
+        </div>
       </div>
     </section>
   );
@@ -158,7 +127,7 @@ function Hero() {
 
 function Manifiesto() {
   return (
-    <section className="py-24">
+    <section className="py-28">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Nuestra mirada
@@ -170,10 +139,10 @@ function Manifiesto() {
           No intervenimos.
         </h2>
 
-        <p className="mt-8 text-white/75 leading-relaxed">
+        <p className="mt-10 text-white/75 leading-relaxed">
           Nos interesa el momento en que alguien debe decidir.
-          El trabajo bajo presión.
-          La responsabilidad cotidiana.
+          La presión cotidiana.
+          La responsabilidad silenciosa.
           <br />
           Cada serie explora ese territorio desde dentro.
         </p>
@@ -184,7 +153,7 @@ function Manifiesto() {
 
 function Programas() {
   return (
-    <section id="programas" className="py-20 border-t border-white/10">
+    <section className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Programas
@@ -194,11 +163,11 @@ function Programas() {
           Series originales
         </h2>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
+        <div className="mt-14 grid md:grid-cols-3 gap-6">
           {PROGRAMS.map((p) => (
             <div
               key={p.name}
-              className="border border-white/10 rounded-3xl p-6 bg-white/5"
+              className="border border-white/10 rounded-3xl p-8 bg-white/5 hover:bg-white/10 transition"
             >
               <div className="flex justify-between items-center">
                 <div className="text-xs tracking-widest uppercase text-white/50">
@@ -207,13 +176,24 @@ function Programas() {
                 <Pill>Formato</Pill>
               </div>
 
-              <div className="mt-4 text-xl font-extrabold">
+              <div className="mt-6 text-xl font-extrabold">
                 {p.name}
               </div>
 
               <p className="mt-4 text-sm text-white/70 leading-relaxed">
                 {p.description}
               </p>
+
+              {p.href && (
+                <div className="mt-6">
+                  <Link
+                    href={p.href}
+                    className="text-sm font-semibold text-white hover:opacity-70 transition"
+                  >
+                    Ver serie →
+                  </Link>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -222,19 +202,48 @@ function Programas() {
   );
 }
 
+function DestacadoRealityDay() {
+  return (
+    <section className="py-28 border-t border-white/10">
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <div className="text-xs tracking-widest uppercase text-white/50">
+          Serie principal
+        </div>
+
+        <h2 className="mt-6 text-4xl md:text-5xl font-extrabold">
+          Reality Day
+        </h2>
+
+        <p className="mt-8 text-white/75 max-w-3xl mx-auto">
+          Un día real de trabajo.
+          Sin guión.
+          Sin actuación.
+          Sin intervención.
+        </p>
+
+        <div className="mt-10">
+          <PrimaryButton href="/reality-day">
+            Ir a la serie
+          </PrimaryButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Episodios() {
   return (
-    <section id="episodios" className="py-20 border-t border-white/10">
+    <section className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Reality Day
         </div>
 
         <h2 className="mt-4 text-3xl font-extrabold">
-          Episodios disponibles
+          Episodios recientes
         </h2>
 
-        <div className="mt-12 grid gap-10">
+        <div className="mt-14 grid gap-12">
           {EPISODES.map((ep) => (
             <div
               key={ep.id}
@@ -249,21 +258,28 @@ function Episodios() {
                 />
               </div>
 
-              <div className="lg:col-span-5 p-8">
+              <div className="lg:col-span-5 p-10">
                 <div className="text-xs tracking-widest uppercase text-white/60">
                   {ep.meta}
                 </div>
-                <h3 className="mt-4 text-2xl font-extrabold">
+
+                <h3 className="mt-6 text-2xl font-extrabold">
                   {ep.title}
                 </h3>
+
                 <div className="mt-2 text-sm text-white/60">
                   {ep.location}
                 </div>
 
-                <div className="mt-6">
-                  <PrimaryButton href={ep.url}>
+                <div className="mt-8">
+                  <a
+                    href={ep.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
+                  >
                     Ver en YouTube
-                  </PrimaryButton>
+                  </a>
                 </div>
               </div>
             </div>
@@ -276,8 +292,8 @@ function Episodios() {
 
 function Contacto() {
   return (
-    <section id="contacto" className="py-24 border-t border-white/10">
-      <div className="max-w-5xl mx-auto px-6 text-center">
+    <section className="py-28 border-t border-white/10">
+      <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Producción documental
         </div>
@@ -286,10 +302,9 @@ function Contacto() {
           Propuestas y colaboraciones
         </h2>
 
-        <p className="mt-6 text-white/75 max-w-3xl mx-auto">
-          Tronx TV desarrolla episodios documentales para empresas,
-          instituciones y equipos que deseen registrar una jornada real
-          bajo formato editorial.
+        <p className="mt-8 text-white/75">
+          Tronx TV desarrolla episodios documentales para empresas e instituciones
+          que deseen registrar una jornada real bajo formato editorial.
         </p>
 
         <div className="mt-10">
@@ -299,10 +314,6 @@ function Contacto() {
           >
             {SITE.email}
           </a>
-        </div>
-
-        <div className="mt-12 text-xs text-white/50">
-          © {new Date().getFullYear()} Tronx TV — Publicación por temporadas.
         </div>
       </div>
     </section>
@@ -315,6 +326,7 @@ export default function Page() {
       <Hero />
       <Manifiesto />
       <Programas />
+      <DestacadoRealityDay />
       <Episodios />
       <Contacto />
     </main>
