@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Tronx TV es un estudio documental independiente que desarrolla series originales sobre jornadas reales de trabajo en oficios, empresas e instituciones.",
+    "Tronx TV es un estudio documental independiente que desarrolla series originales sobre jornadas reales en oficios, empresas e instituciones.",
 
   openGraph: {
     type: "website",
@@ -68,7 +68,7 @@ function Header() {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.25em] uppercase text-white/60">
+        <nav className="hidden md:flex items-center gap-12 text-[11px] tracking-[0.25em] uppercase text-white/60">
 
           <Link
             href="/reality-day"
@@ -78,14 +78,14 @@ function Header() {
           </Link>
 
           <Link
-            href="/#programas"
+            href="/series"
             className="hover:text-white transition duration-300"
           >
             Series
           </Link>
 
           <Link
-            href="/#contacto"
+            href="/produccion"
             className="hover:text-white transition duration-300"
           >
             Producción
@@ -125,7 +125,7 @@ function Footer() {
 
             <p className="mt-6 text-sm text-white/70 leading-relaxed max-w-sm">
               Estudio documental independiente.
-              Desarrollamos series originales sobre jornadas reales
+              Creamos series originales sobre jornadas reales
               en oficios, empresas e instituciones.
             </p>
           </div>
@@ -150,13 +150,13 @@ function Footer() {
               </li>
 
               <li>
-                <Link href="/#programas" className="hover:text-white transition">
+                <Link href="/series" className="hover:text-white transition">
                   Series
                 </Link>
               </li>
 
               <li>
-                <Link href="/#contacto" className="hover:text-white transition">
+                <Link href="/produccion" className="hover:text-white transition">
                   Producción documental
                 </Link>
               </li>
@@ -228,6 +228,7 @@ function Footer() {
             Estudio independiente · Chile
           </span>
         </div>
+
       </div>
     </footer>
   );
