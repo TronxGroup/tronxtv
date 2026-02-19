@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Tronx TV — Studio Home
+ * Tronx TV — Home
  * Estudio documental independiente
  */
 
@@ -12,14 +12,15 @@ const SITE = {
   name: "Tronx TV",
   tagline: "Estudio documental independiente",
   email: "info@tronxtv.com",
+  youtube: "https://www.youtube.com/@tronxtv",
 };
 
 const PROGRAMS = [
   {
     name: "Reality Day",
-    status: "En emisión",
+    status: "Temporada 1 en emisión",
     description:
-      "Serie documental que acompaña una jornada completa en oficios, servicios e instituciones.",
+      "Serie documental que acompaña una jornada completa en oficios, empresas e instituciones.",
     href: "/reality-day",
   },
   {
@@ -27,12 +28,14 @@ const PROGRAMS = [
     status: "En desarrollo",
     description:
       "Conversaciones extensas con protagonistas del mundo empresarial e institucional.",
+    href: "/series",
   },
   {
     name: "Series especiales",
     status: "Próximamente",
     description:
       "Formatos documentales diseñados para temas que exigen mayor profundidad narrativa.",
+    href: "/series",
   },
 ];
 
@@ -55,9 +58,13 @@ const EPISODES = [
   },
 ] as const;
 
+/* =========================
+   UI COMPONENTS
+========================= */
+
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[11px] tracking-widest uppercase border border-white/15">
+    <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[11px] tracking-[0.2em] uppercase border border-white/15">
       {children}
     </span>
   );
@@ -73,12 +80,16 @@ function PrimaryButton({
   return (
     <Link
       href={href}
-      className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
+      className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-7 py-3 text-sm font-semibold hover:opacity-90 transition"
     >
       {children}
     </Link>
   );
 }
+
+/* =========================
+   SECTIONS
+========================= */
 
 function Hero() {
   return (
@@ -91,34 +102,43 @@ function Hero() {
         className="object-cover brightness-[0.55]"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/95" />
 
       <div className="relative z-10 max-w-4xl px-6 text-center pt-32">
-        <div className="flex justify-center gap-2 mb-6">
+        <div className="flex justify-center gap-3 mb-6">
           <Pill>Serie documental</Pill>
           <Pill>Producción original</Pill>
-          <Pill>Temporadas</Pill>
+          <Pill>Estudio independiente</Pill>
         </div>
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
           {SITE.name}
         </h1>
 
-        <p className="mt-4 text-xs tracking-widest uppercase text-white/60">
+        <p className="mt-4 text-xs tracking-[0.3em] uppercase text-white/60">
           {SITE.tagline}
         </p>
 
-        <p className="mt-8 text-lg md:text-xl text-white/85 leading-relaxed">
+        <p className="mt-10 text-lg md:text-xl text-white/85 leading-relaxed">
           Desarrollamos formatos documentales que observan cómo se toman
           decisiones reales.
           <br />
           Oficios, empresas e instituciones enfrentando el peso de un día completo.
         </p>
 
-        <div className="mt-10">
+        <div className="mt-12 flex justify-center gap-6 flex-wrap">
           <PrimaryButton href="/reality-day">
             Explorar Reality Day
           </PrimaryButton>
+
+          <a
+            href={SITE.youtube}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-7 py-3 text-sm font-semibold hover:bg-white/10 transition"
+          >
+            Ver en YouTube
+          </a>
         </div>
       </div>
     </section>
@@ -127,19 +147,19 @@ function Hero() {
 
 function Manifiesto() {
   return (
-    <section className="py-28">
+    <section className="py-32">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs tracking-widest uppercase text-white/50">
+        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
           Nuestra mirada
         </div>
 
-        <h2 className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight">
+        <h2 className="mt-8 text-3xl md:text-5xl font-extrabold leading-tight">
           Observamos.
           <br />
           No intervenimos.
         </h2>
 
-        <p className="mt-10 text-white/75 leading-relaxed">
+        <p className="mt-12 text-white/75 leading-relaxed">
           Nos interesa el momento en que alguien debe decidir.
           La presión cotidiana.
           La responsabilidad silenciosa.
@@ -153,27 +173,25 @@ function Manifiesto() {
 
 function Programas() {
   return (
-    <section className="py-24 border-t border-white/10">
+    <section className="py-28 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-xs tracking-widest uppercase text-white/50">
-          Programas
+        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
+          Series
         </div>
 
-        <h2 className="mt-4 text-3xl font-extrabold">
-          Series originales
+        <h2 className="mt-6 text-3xl font-extrabold">
+          Producción original
         </h2>
 
-        <div className="mt-14 grid md:grid-cols-3 gap-6">
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
           {PROGRAMS.map((p) => (
-            <div
+            <Link
               key={p.name}
+              href={p.href}
               className="border border-white/10 rounded-3xl p-8 bg-white/5 hover:bg-white/10 transition"
             >
-              <div className="flex justify-between items-center">
-                <div className="text-xs tracking-widest uppercase text-white/50">
-                  {p.status}
-                </div>
-                <Pill>Formato</Pill>
+              <div className="text-xs tracking-[0.2em] uppercase text-white/50">
+                {p.status}
               </div>
 
               <div className="mt-6 text-xl font-extrabold">
@@ -184,46 +202,16 @@ function Programas() {
                 {p.description}
               </p>
 
-              {p.href && (
-                <div className="mt-6">
-                  <Link
-                    href={p.href}
-                    className="text-sm font-semibold text-white hover:opacity-70 transition"
-                  >
-                    Ver serie →
-                  </Link>
-                </div>
-              )}
-            </div>
+              <div className="mt-6 text-sm font-semibold text-white/80">
+                Explorar →
+              </div>
+            </Link>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
 
-function DestacadoRealityDay() {
-  return (
-    <section className="py-28 border-t border-white/10">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <div className="text-xs tracking-widest uppercase text-white/50">
-          Serie principal
-        </div>
-
-        <h2 className="mt-6 text-4xl md:text-5xl font-extrabold">
-          Reality Day
-        </h2>
-
-        <p className="mt-8 text-white/75 max-w-3xl mx-auto">
-          Un día real de trabajo.
-          Sin guión.
-          Sin actuación.
-          Sin intervención.
-        </p>
-
-        <div className="mt-10">
-          <PrimaryButton href="/reality-day">
-            Ir a la serie
+        <div className="mt-16 text-center">
+          <PrimaryButton href="/series">
+            Ver todas las series
           </PrimaryButton>
         </div>
       </div>
@@ -233,21 +221,21 @@ function DestacadoRealityDay() {
 
 function Episodios() {
   return (
-    <section className="py-24 border-t border-white/10">
+    <section className="py-28 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-xs tracking-widest uppercase text-white/50">
+        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
           Reality Day
         </div>
 
-        <h2 className="mt-4 text-3xl font-extrabold">
+        <h2 className="mt-6 text-3xl font-extrabold">
           Episodios recientes
         </h2>
 
-        <div className="mt-14 grid gap-12">
+        <div className="mt-16 grid gap-14">
           {EPISODES.map((ep) => (
             <div
               key={ep.id}
-              className="grid lg:grid-cols-12 gap-6 border border-white/10 rounded-3xl overflow-hidden bg-white/5"
+              className="grid lg:grid-cols-12 gap-8 border border-white/10 rounded-3xl overflow-hidden bg-white/5"
             >
               <div className="relative lg:col-span-7 min-h-[320px]">
                 <Image
@@ -259,7 +247,7 @@ function Episodios() {
               </div>
 
               <div className="lg:col-span-5 p-10">
-                <div className="text-xs tracking-widest uppercase text-white/60">
+                <div className="text-xs tracking-[0.2em] uppercase text-white/60">
                   {ep.meta}
                 </div>
 
@@ -271,7 +259,7 @@ function Episodios() {
                   {ep.location}
                 </div>
 
-                <div className="mt-8">
+                <div className="mt-8 flex gap-4 flex-wrap">
                   <a
                     href={ep.url}
                     target="_blank"
@@ -280,6 +268,13 @@ function Episodios() {
                   >
                     Ver en YouTube
                   </a>
+
+                  <Link
+                    href="/reality-day"
+                    className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold hover:bg-white/10 transition"
+                  >
+                    Ver serie
+                  </Link>
                 </div>
               </div>
             </div>
@@ -290,27 +285,32 @@ function Episodios() {
   );
 }
 
-function Contacto() {
+function ProduccionCTA() {
   return (
-    <section className="py-28 border-t border-white/10">
+    <section className="py-32 border-t border-white/10">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs tracking-widest uppercase text-white/50">
+        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
           Producción documental
         </div>
 
-        <h2 className="mt-6 text-3xl md:text-4xl font-extrabold">
+        <h2 className="mt-8 text-3xl md:text-4xl font-extrabold">
           Propuestas y colaboraciones
         </h2>
 
-        <p className="mt-8 text-white/75">
-          Tronx TV desarrolla episodios documentales para empresas e instituciones
-          que deseen registrar una jornada real bajo formato editorial.
+        <p className="mt-10 text-white/75 leading-relaxed">
+          Tronx TV produce episodios documentales para empresas,
+          instituciones y equipos que deseen registrar una jornada real
+          bajo formato editorial.
         </p>
 
-        <div className="mt-10">
+        <div className="mt-12 flex justify-center gap-6 flex-wrap">
+          <PrimaryButton href="/produccion">
+            Ver producción
+          </PrimaryButton>
+
           <a
             href={`mailto:${SITE.email}`}
-            className="inline-flex items-center justify-center rounded-2xl bg-white/10 text-white px-6 py-3 text-sm font-semibold border border-white/15 hover:bg-white/15 transition"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-7 py-3 text-sm font-semibold hover:bg-white/10 transition"
           >
             {SITE.email}
           </a>
@@ -320,15 +320,18 @@ function Contacto() {
   );
 }
 
+/* =========================
+   PAGE
+========================= */
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-black text-white">
       <Hero />
       <Manifiesto />
       <Programas />
-      <DestacadoRealityDay />
       <Episodios />
-      <Contacto />
+      <ProduccionCTA />
     </main>
   );
 }
