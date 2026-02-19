@@ -3,52 +3,58 @@
 import Image from "next/image";
 
 /**
- * Tronx TV — Cinematic Editorial Home
- * Estudio documental de jornadas reales
+ * Tronx TV — Studio Home
+ * Estudio documental independiente
  */
 
 const SITE = {
   name: "Tronx TV",
-  tagline: "Estudio documental de jornadas reales",
+  tagline: "Estudio documental independiente",
   email: "info@tronxtv.com",
   socials: [
     { name: "YouTube", href: "https://www.youtube.com/@tronxtv" },
     { name: "Instagram", href: "https://www.instagram.com/tronxtv/" },
-    { name: "Facebook", href: "https://web.facebook.com/tronxtv/" },
     { name: "TikTok", href: "https://www.tiktok.com/@tronxtv" },
   ],
 };
 
 const PROGRAMS = [
-  { name: "Reality Day", status: "En emisión" },
-  { name: "Vodcast", status: "En desarrollo" },
-  { name: "Series especiales", status: "Próximamente" },
+  {
+    name: "Reality Day",
+    status: "En emisión",
+    description:
+      "Serie documental que acompaña una jornada completa en oficios, servicios e instituciones. Primer formato original de Tronx TV.",
+  },
+  {
+    name: "Vodcast",
+    status: "En desarrollo",
+    description:
+      "Conversaciones extensas con protagonistas del mundo empresarial e institucional. Ritmo pausado. Profundidad.",
+  },
+  {
+    name: "Series especiales",
+    status: "Próximamente",
+    description:
+      "Formatos documentales diseñados para temas que exigen mayor profundidad narrativa.",
+  },
 ];
 
 const EPISODES = [
   {
     id: "ep1",
-    program: "Reality Day",
     title: "El mimbre no espera",
-    subtitle: "Un día real de trabajo",
-    url: "https://youtu.be/xiOxzZTb8Q4",
-    meta: "Episodio 1 · 2026",
+    meta: "Reality Day · Episodio 1 · 2026",
     location: "Ñuñoa, Santiago de Chile",
+    url: "https://youtu.be/xiOxzZTb8Q4",
     thumb: "/ep1_thumb.jpg",
-    description:
-      "Una jornada completa en Artesanía Pradena. Oficio heredado, decisiones diarias y el peso del tiempo en un trabajo hecho a mano.",
   },
   {
     id: "ep2",
-    program: "Reality Day",
     title: "No era solo mantención",
-    subtitle: "Un día real de trabajo",
-    url: "https://youtu.be/4xe4CtPW4lI",
-    meta: "Episodio 2 · 2026",
+    meta: "Reality Day · Episodio 2 · 2026",
     location: "Santiago de Chile",
+    url: "https://youtu.be/4xe4CtPW4lI",
     thumb: "/ep2_thumb.jpg",
-    description:
-      "Un taller mecánico enfrenta un problema que no aparece a simple vista. Diagnóstico, presión y decisiones técnicas en tiempo real.",
   },
 ] as const;
 
@@ -72,7 +78,7 @@ function PrimaryButton({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
+      className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
     >
       {children}
     </a>
@@ -94,9 +100,15 @@ function TopNav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-6 text-xs tracking-widest uppercase text-white/70">
-          <a href="#programas" className="hover:text-white transition">Programas</a>
-          <a href="#episodios" className="hover:text-white transition">Episodios</a>
-          <a href="#contacto" className="hover:text-white transition">Contacto</a>
+          <a href="#programas" className="hover:text-white transition">
+            Programas
+          </a>
+          <a href="#episodios" className="hover:text-white transition">
+            Episodios
+          </a>
+          <a href="#contacto" className="hover:text-white transition">
+            Producción
+          </a>
         </nav>
       </div>
     </header>
@@ -104,8 +116,6 @@ function TopNav() {
 }
 
 function Hero() {
-  const latest = EPISODES[EPISODES.length - 1];
-
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden">
       <TopNav />
@@ -120,10 +130,10 @@ function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90" />
 
-      <div className="relative z-10 max-w-5xl px-6 text-center pt-32">
+      <div className="relative z-10 max-w-4xl px-6 text-center pt-32">
         <div className="flex justify-center gap-2 mb-6">
           <Pill>Serie documental</Pill>
-          <Pill>Observación directa</Pill>
+          <Pill>Producción original</Pill>
           <Pill>Temporadas</Pill>
         </div>
 
@@ -136,22 +146,11 @@ function Hero() {
         </p>
 
         <p className="mt-8 text-lg md:text-xl text-white/85 leading-relaxed">
-          El trabajo no se detiene.
+          Tronx TV desarrolla formatos documentales que observan cómo se toman
+          decisiones reales.
           <br />
-          Se decide bajo presión.
-          <br />
-          Se sostiene en silencio.
-          <br />
-          <span className="font-medium text-white">
-            Documentamos jornadas completas, tal como ocurren.
-          </span>
+          Oficios, empresas, instituciones y equipos enfrentando el peso de un día completo.
         </p>
-
-        <div className="mt-10">
-          <PrimaryButton href={latest.url}>
-            Ver último episodio
-          </PrimaryButton>
-        </div>
       </div>
     </section>
   );
@@ -166,18 +165,17 @@ function Manifiesto() {
         </div>
 
         <h2 className="mt-6 text-3xl md:text-5xl font-extrabold leading-tight">
-          No dramatizamos.
-          <br />
           Observamos.
+          <br />
+          No intervenimos.
         </h2>
 
         <p className="mt-8 text-white/75 leading-relaxed">
-          Cada episodio acompaña un día completo.
-          Las decisiones ocurren frente a la cámara,
-          y continúan después.
+          Nos interesa el momento en que alguien debe decidir.
+          El trabajo bajo presión.
+          La responsabilidad cotidiana.
           <br />
-          El conflicto no se escribe.
-          Se encuentra.
+          Cada serie explora ese territorio desde dentro.
         </p>
       </div>
     </section>
@@ -186,20 +184,15 @@ function Manifiesto() {
 
 function Programas() {
   return (
-    <section id="programas" className="py-20">
+    <section id="programas" className="py-20 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Programas
         </div>
 
         <h2 className="mt-4 text-3xl font-extrabold">
-          Formatos documentales
+          Series originales
         </h2>
-
-        <p className="mt-6 text-white/75 max-w-3xl">
-          Tronx TV desarrolla series por temporadas.
-          Cada formato explora el trabajo desde un ángulo distinto.
-        </p>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6">
           {PROGRAMS.map((p) => (
@@ -207,14 +200,19 @@ function Programas() {
               key={p.name}
               className="border border-white/10 rounded-3xl p-6 bg-white/5"
             >
-              <div className="text-xs tracking-widest uppercase text-white/50">
-                {p.status}
+              <div className="flex justify-between items-center">
+                <div className="text-xs tracking-widest uppercase text-white/50">
+                  {p.status}
+                </div>
+                <Pill>Formato</Pill>
               </div>
-              <div className="mt-3 text-xl font-extrabold">{p.name}</div>
-              <p className="mt-3 text-sm text-white/70">
-                {p.name === "Reality Day"
-                  ? "Una jornada completa acompañando decisiones reales."
-                  : "Formato en desarrollo dentro del universo Tronx TV."}
+
+              <div className="mt-4 text-xl font-extrabold">
+                {p.name}
+              </div>
+
+              <p className="mt-4 text-sm text-white/70 leading-relaxed">
+                {p.description}
               </p>
             </div>
           ))}
@@ -226,7 +224,7 @@ function Programas() {
 
 function Episodios() {
   return (
-    <section id="episodios" className="py-20">
+    <section id="episodios" className="py-20 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-xs tracking-widest uppercase text-white/50">
           Reality Day
@@ -258,9 +256,9 @@ function Episodios() {
                 <h3 className="mt-4 text-2xl font-extrabold">
                   {ep.title}
                 </h3>
-                <p className="mt-4 text-white/75 leading-relaxed">
-                  {ep.description}
-                </p>
+                <div className="mt-2 text-sm text-white/60">
+                  {ep.location}
+                </div>
 
                 <div className="mt-6">
                   <PrimaryButton href={ep.url}>
