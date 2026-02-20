@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon_tronxtv_web.png",
     apple: [
       {
-        url: "/favicon_tronxtv.png",
+        url: "/favicon_tronxtv_web.png",
         sizes: "180x180",
       },
     ],
