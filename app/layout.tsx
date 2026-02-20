@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon_tronxtv.png",
+        url: "/favicon_tronxtv_web.png",
         type: "image/png",
       },
     ],
-    shortcut: "/favicon_tronxtv.png",
+    shortcut: "/favicon_tronxtv_web.png",
     apple: [
       {
         url: "/favicon_tronxtv.png",
