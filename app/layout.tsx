@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon_tronxtv_web.png",
+        url: "/favicon_tronxtv.png",
         type: "image/png",
       },
     ],
-    shortcut: "/favicon_tronxtv_web.png",
+    shortcut: "/favicon_tronxtv.png",
     apple: [
       {
-        url: "/favicon_tronxtv_web.png",
+        url: "/favicon_tronxtv.png",
         sizes: "180x180",
       },
     ],
