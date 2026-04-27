@@ -1,337 +1,284 @@
-"use client";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tronx TV — Chile desde adentro</title>
 
-import Image from "next/image";
-import Link from "next/link";
+<meta name="description" content="Canal editorial chileno. Series documentales, vodcast y producciones originales. Chile desde adentro.">
+<meta name="theme-color" content="#0D0D0D">
 
-/**
- * Tronx TV — Home
- * Estudio documental independiente
- */
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-const SITE = {
-  name: "Tronx TV",
-  tagline: "Estudio documental independiente",
-  email: "info@tronxtv.com",
-  youtube: "https://www.youtube.com/@tronxtv",
-};
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-const PROGRAMS = [
-  {
-    name: "Reality Day",
-    status: "Temporada 1 en emisión",
-    description:
-      "Serie documental que acompaña una jornada completa en oficios, empresas e instituciones.",
-    href: "/reality-day",
-  },
-  {
-    name: "Vodcast",
-    status: "En desarrollo",
-    description:
-      "Conversaciones extensas con protagonistas del mundo empresarial e institucional.",
-    href: "/series",
-  },
-  {
-    name: "Series especiales",
-    status: "Próximamente",
-    description:
-      "Formatos documentales diseñados para temas que exigen mayor profundidad narrativa.",
-    href: "/series",
-  },
-];
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-const EPISODES = [
-  {
-    id: "ep1",
-    title: "El mimbre no espera",
-    meta: "Reality Day · Episodio 1 · 2026",
-    location: "Ñuñoa, Santiago de Chile",
-    url: "https://youtu.be/xiOxzZTb8Q4",
-    thumb: "/ep1_thumb.jpg",
-  },
-  {
-    id: "ep2",
-    title: "No era solo mantención",
-    meta: "Reality Day · Episodio 2 · 2026",
-    location: "Santiago de Chile",
-    url: "https://youtu.be/4xe4CtPW4lI",
-    thumb: "/ep2_thumb.jpg",
-  },
-] as const;
-
-/* =========================
-   UI COMPONENTS
-========================= */
-
-function Pill({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-[11px] tracking-[0.2em] uppercase border border-white/15">
-      {children}
-    </span>
-  );
+:root {
+  --negro: #0D0D0D;
+  --blanco: #F2EFE8;
+  --rojo: #C0392B;
+  --gris: #8A8880;
+  --gris-claro: #1A1A1A;
+  --linea: rgba(242,239,232,0.1);
 }
 
-function PrimaryButton({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-7 py-3 text-sm font-semibold hover:opacity-90 transition"
-    >
-      {children}
-    </Link>
-  );
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-
-function Hero() {
-  return (
-    <section className="relative min-h-[92vh] flex items-center justify-center text-white overflow-hidden">
-      <Image
-        src="/bg_tronxtv.jpg"
-        alt="Tronx TV"
-        fill
-        priority
-        className="object-cover brightness-[0.55]"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/95" />
-
-      <div className="relative z-10 max-w-4xl px-6 text-center pt-32">
-        <div className="flex justify-center gap-3 mb-6">
-          <Pill>Serie documental</Pill>
-          <Pill>Producción original</Pill>
-          <Pill>Estudio independiente</Pill>
-        </div>
-
-        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          {SITE.name}
-        </h1>
-
-        <p className="mt-4 text-xs tracking-[0.3em] uppercase text-white/60">
-          {SITE.tagline}
-        </p>
-
-        <p className="mt-10 text-lg md:text-xl text-white/85 leading-relaxed">
-          Desarrollamos formatos documentales que observan cómo se toman
-          decisiones reales.
-          <br />
-          Oficios, empresas e instituciones enfrentando el peso de un día completo.
-        </p>
-
-        <div className="mt-12 flex justify-center gap-6 flex-wrap">
-          <PrimaryButton href="/reality-day">
-            Explorar Reality Day
-          </PrimaryButton>
-
-          <a
-            href={SITE.youtube}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-7 py-3 text-sm font-semibold hover:bg-white/10 transition"
-          >
-            Ver en YouTube
-          </a>
-        </div>
-      </div>
-    </section>
-  );
+/* NOISE */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
 }
 
-function Manifiesto() {
-  return (
-    <section className="py-32">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
-          Nuestra mirada
-        </div>
-
-        <h2 className="mt-8 text-3xl md:text-5xl font-extrabold leading-tight">
-          Observamos.
-          <br />
-          No intervenimos.
-        </h2>
-
-        <p className="mt-12 text-white/75 leading-relaxed">
-          Nos interesa el momento en que alguien debe decidir.
-          La presión cotidiana.
-          La responsabilidad silenciosa.
-          <br />
-          Cada serie explora ese territorio desde dentro.
-        </p>
-      </div>
-    </section>
-  );
+/* NAV */
+nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.95), transparent);
 }
 
-function Programas() {
-  return (
-    <section className="py-28 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
-          Series
-        </div>
-
-        <h2 className="mt-6 text-3xl font-extrabold">
-          Producción original
-        </h2>
-
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          {PROGRAMS.map((p) => (
-            <Link
-              key={p.name}
-              href={p.href}
-              className="border border-white/10 rounded-3xl p-8 bg-white/5 hover:bg-white/10 transition"
-            >
-              <div className="text-xs tracking-[0.2em] uppercase text-white/50">
-                {p.status}
-              </div>
-
-              <div className="mt-6 text-xl font-extrabold">
-                {p.name}
-              </div>
-
-              <p className="mt-4 text-sm text-white/70 leading-relaxed">
-                {p.description}
-              </p>
-
-              <div className="mt-6 text-sm font-semibold text-white/80">
-                Explorar →
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <PrimaryButton href="/series">
-            Ver todas las series
-          </PrimaryButton>
-        </div>
-      </div>
-    </section>
-  );
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-function Episodios() {
-  return (
-    <section className="py-28 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
-          Reality Day
-        </div>
+.nav-logo span { color: var(--rojo); }
 
-        <h2 className="mt-6 text-3xl font-extrabold">
-          Episodios recientes
-        </h2>
-
-        <div className="mt-16 grid gap-14">
-          {EPISODES.map((ep) => (
-            <div
-              key={ep.id}
-              className="grid lg:grid-cols-12 gap-8 border border-white/10 rounded-3xl overflow-hidden bg-white/5"
-            >
-              <div className="relative lg:col-span-7 min-h-[320px]">
-                <Image
-                  src={ep.thumb}
-                  alt={ep.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="lg:col-span-5 p-10">
-                <div className="text-xs tracking-[0.2em] uppercase text-white/60">
-                  {ep.meta}
-                </div>
-
-                <h3 className="mt-6 text-2xl font-extrabold">
-                  {ep.title}
-                </h3>
-
-                <div className="mt-2 text-sm text-white/60">
-                  {ep.location}
-                </div>
-
-                <div className="mt-8 flex gap-4 flex-wrap">
-                  <a
-                    href={ep.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-2xl bg-white text-black px-6 py-3 text-sm font-semibold hover:opacity-90 transition"
-                  >
-                    Ver en YouTube
-                  </a>
-
-                  <Link
-                    href="/reality-day"
-                    className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold hover:bg-white/10 transition"
-                  >
-                    Ver serie
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+.nav-star {
+  width: 8px;
+  height: 8px;
+  background: var(--rojo);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
-function ProduccionCTA() {
-  return (
-    <section className="py-32 border-t border-white/10">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="text-xs tracking-[0.25em] uppercase text-white/50">
-          Producción documental
-        </div>
-
-        <h2 className="mt-8 text-3xl md:text-4xl font-extrabold">
-          Propuestas y colaboraciones
-        </h2>
-
-        <p className="mt-10 text-white/75 leading-relaxed">
-          Tronx TV produce episodios documentales para empresas,
-          instituciones y equipos que deseen registrar una jornada real
-          bajo formato editorial.
-        </p>
-
-        <div className="mt-12 flex justify-center gap-6 flex-wrap">
-          <PrimaryButton href="/produccion">
-            Ver producción
-          </PrimaryButton>
-
-          <a
-            href={`mailto:${SITE.email}`}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/20 px-7 py-3 text-sm font-semibold hover:bg-white/10 transition"
-          >
-            {SITE.email}
-          </a>
-        </div>
-      </div>
-    </section>
-  );
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
 }
 
-/* =========================
-   PAGE
-========================= */
-
-export default function Page() {
-  return (
-    <main className="min-h-screen bg-black text-white">
-      <Hero />
-      <Manifiesto />
-      <Programas />
-      <Episodios />
-      <ProduccionCTA />
-    </main>
-  );
+.nav-links a {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(242,239,232,0.5);
+  text-decoration: none;
+  transition: color 0.3s;
 }
+
+.nav-links a:hover { color: var(--blanco); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 48px 80px;
+  position: relative;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,57,43,0.08), transparent),
+    linear-gradient(to bottom, rgba(13,13,13,0.3), rgba(13,13,13,0.95));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 10vw, 120px);
+  line-height: 0.9;
+  margin-bottom: 24px;
+}
+
+.hero-title em {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242,239,232,0.3);
+  font-style: normal;
+}
+
+.hero-sub {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(242,239,232,0.7);
+  margin-bottom: 40px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: var(--blanco);
+  color: var(--negro);
+  padding: 14px 24px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(242,239,232,0.2);
+  padding: 14px 24px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+/* PROGRAMAS */
+.programas {
+  padding: 100px 48px;
+}
+
+.programas-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1px;
+  background: var(--linea);
+}
+
+.programa-card {
+  padding: 40px;
+  background: var(--negro);
+}
+
+.card-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+footer {
+  padding: 60px 48px;
+  border-top: 1px solid var(--linea);
+  text-align: center;
+}
+
+.footer-copy {
+  font-size: 11px;
+  color: var(--gris);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .programas-grid { grid-template-columns: 1fr; }
+  .hero { padding: 0 24px 60px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-star"></div>
+    Tronx<span>TV</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#programas">Programas</a></li>
+    <li><a href="mailto:info@tronxtv.com">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Canal editorial chileno</div>
+
+    <h1 class="hero-title">
+      Chile<br><em>desde</em><br>adentro.
+    </h1>
+
+    <p class="hero-sub">
+      Documentales y series sobre personas reales enfrentando días reales.
+    </p>
+
+    <div class="hero-cta">
+      <a href="https://www.youtube.com/@tronxtv" target="_blank" class="btn-primary">
+        Ver en YouTube
+      </a>
+      <a href="#programas" class="btn-ghost">
+        Programas
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="programas" id="programas">
+  <div class="programas-grid">
+
+    <div class="programa-card">
+      <div class="card-name">Reality Day</div>
+      <p>Serie documental. Un día real de trabajo en Chile.</p>
+    </div>
+
+    <div class="programa-card">
+      <div class="card-name">Ídolos</div>
+      <p>Conversaciones profundas con personajes reales.</p>
+    </div>
+
+    <div class="programa-card">
+      <div class="card-name">Series especiales</div>
+      <p>Formatos documentales y narrativos.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">
+    © 2026 Tronx TV — Dekaelo Media
+  </div>
+</footer>
+
+</body>
+</html>
