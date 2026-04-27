@@ -3,7 +3,7 @@ export default function Home() {
     <main className="bg-black text-white">
 
       {/* ================= HERO ================= */}
-      <section className="min-h-screen flex items-end px-6 md:px-12 pb-24">
+      <section id="hero" className="min-h-screen flex items-end px-6 md:px-12 pb-24">
         <div className="max-w-3xl">
 
           <h1 className="text-5xl md:text-8xl leading-[0.9] mb-6">
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* ================= REALITY DAY ================= */}
-      <section className="px-6 md:px-12 py-24 border-t border-white/10">
+      <section id="reality" className="px-6 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-2xl">
 
           <h2 className="text-4xl md:text-6xl mb-6">
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* ================= EPISODIOS ================= */}
-      <section className="px-6 md:px-12 pb-24">
+      <section id="episodios" className="px-6 md:px-12 pb-24">
 
         <div className="max-w-5xl">
 
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* ================= PRODUCCIÓN ================= */}
-      <section className="px-6 md:px-12 py-24 border-t border-white/10">
+      <section id="produccion" className="px-6 md:px-12 py-24 border-t border-white/10">
 
         <div className="max-w-xl">
 
