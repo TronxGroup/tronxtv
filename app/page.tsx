@@ -72,13 +72,11 @@ export default function Home() {
               className="group"
             >
               <div className="relative aspect-video overflow-hidden bg-neutral-900">
-
                 <img
                   src="/ep1_thumb.jpg"
                   alt="Reality Day Episodio 1"
                   className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
                 />
-
               </div>
 
               <div className="mt-3 text-sm text-white/80 group-hover:text-white transition">
@@ -93,13 +91,11 @@ export default function Home() {
               className="group"
             >
               <div className="relative aspect-video overflow-hidden bg-neutral-900">
-
                 <img
                   src="/ep2_thumb.jpg"
                   alt="Reality Day Episodio 2"
                   className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
                 />
-
               </div>
 
               <div className="mt-3 text-sm text-white/80 group-hover:text-white transition">
