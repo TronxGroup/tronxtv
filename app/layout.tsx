@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,24 +21,28 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Tronx TV — Estudio documental independiente",
+    default: "Tronx TV — Canal editorial chileno",
     template: "%s | Tronx TV",
   },
 
   description:
-    "Estudio documental independiente. Series originales sobre jornadas reales en Chile.",
+    "Canal editorial chileno. Documentales sobre personas reales y trabajo real en Chile.",
+
+  icons: {
+    icon: "/favicon_tronxtv.png",
+  },
 
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Tronx TV",
-    description: "Series documentales originales.",
+    description: "Documentales sobre personas reales en Chile.",
     images: ["/og-tronxtv.jpg"],
   },
 };
 
 /* =========================
-   HEADER (MEJORADO)
+   HEADER
 ========================= */
 
 function Header() {
@@ -49,9 +51,8 @@ function Header() {
 
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
 
-        {/* LOGO + NOMBRE (MEJOR MARCA) */}
+        {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
-
           <div className="relative w-10 h-10">
             <Image
               src="/2025_logo_tronx_tv.png"
@@ -65,23 +66,22 @@ function Header() {
           <span className="text-sm tracking-[0.3em] uppercase text-white/80 group-hover:text-white transition">
             Tronx TV
           </span>
-
         </Link>
 
-        {/* NAV */}
+        {/* NAV → SECCIONES DEL HOME */}
         <nav className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.25em] uppercase text-white/50">
 
-          <Link href="/reality-day" className="text-white hover:opacity-70 transition">
+          <a href="#reality" className="hover:text-white transition">
             Reality Day
-          </Link>
+          </a>
 
-          <Link href="/series" className="hover:text-white transition">
-            Series
-          </Link>
+          <a href="#episodios" className="hover:text-white transition">
+            Episodios
+          </a>
 
-          <Link href="/produccion" className="hover:text-white transition">
+          <a href="#produccion" className="hover:text-white transition">
             Producción
-          </Link>
+          </a>
 
           <a
             href="https://www.youtube.com/@tronxtv"
@@ -99,100 +99,57 @@ function Header() {
 }
 
 /* =========================
-   FOOTER (MEJORADO)
+   FOOTER
 ========================= */
 
 function Footer() {
   return (
     <footer className="border-t border-white/10 bg-black text-white">
 
-      <div className="max-w-6xl mx-auto px-6 py-24">
+      <div className="max-w-6xl mx-auto px-6 py-20">
 
-        <div className="grid md:grid-cols-3 gap-16">
+        {/* LOGO + LINK ARRIBA */}
+        <Link href="/" className="flex items-center gap-3 mb-10 group">
 
-          {/* MARCA */}
-          <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-white/40">
-              Tronx TV
-            </div>
-
-            <p className="mt-6 text-sm text-white/70 leading-relaxed max-w-sm">
-              Estudio documental independiente enfocado en observar,
-              registrar y construir relatos reales sobre el trabajo en Chile.
-            </p>
+          <div className="relative w-10 h-10">
+            <Image
+              src="/2025_logo_tronx_tv.png"
+              alt="Tronx TV"
+              fill
+              className="object-contain"
+            />
           </div>
 
-          {/* NAVEGACIÓN */}
-          <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-white/40">
-              Contenido
-            </div>
+          <span className="text-xs tracking-[0.3em] uppercase text-white/60 group-hover:text-white transition">
+            Tronx TV
+          </span>
 
-            <ul className="mt-6 space-y-4 text-sm text-white/70">
+        </Link>
 
-              <li>
-                <Link href="/reality-day" className="hover:text-white transition">
-                  Reality Day
-                </Link>
-              </li>
+        {/* REDES */}
+        <div className="flex flex-wrap gap-6 text-sm text-white/60">
 
-              <li>
-                <Link href="/series" className="hover:text-white transition">
-                  Series documentales
-                </Link>
-              </li>
+          <a href="https://www.youtube.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+            YouTube
+          </a>
 
-              <li>
-                <Link href="/produccion" className="hover:text-white transition">
-                  Producción para empresas
-                </Link>
-              </li>
+          <a href="https://www.instagram.com/tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+            Instagram
+          </a>
 
-            </ul>
-          </div>
+          <a href="https://www.tiktok.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+            TikTok
+          </a>
 
-          {/* REDES */}
-          <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-white/40">
-              Canales
-            </div>
-
-            <ul className="mt-6 space-y-4 text-sm text-white/70">
-
-              <li>
-                <a href="https://www.youtube.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white transition">
-                  YouTube
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.instagram.com/tronxtv/" target="_blank" rel="noreferrer" className="hover:text-white transition">
-                  Instagram
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.tiktok.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white transition">
-                  TikTok
-                </a>
-              </li>
-
-            </ul>
-          </div>
+          <a href="https://www.facebook.com/tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+            Facebook
+          </a>
 
         </div>
 
-        {/* BOTTOM */}
-        <div className="mt-24 border-t border-white/10 pt-8 text-xs text-white/40 flex flex-col md:flex-row justify-between gap-4">
-
-          <span>
-            © {new Date().getFullYear()} Tronx TV
-          </span>
-
-          <span>
-            Estudio independiente · Santiago de Chile
-          </span>
-
+        {/* COPY */}
+        <div className="mt-12 text-xs text-white/40">
+          © {new Date().getFullYear()} Tronx TV · Chile
         </div>
 
       </div>
@@ -218,8 +175,9 @@ export default function RootLayout({
     logo: `${siteUrl}/favicon_tronxtv.png`,
     sameAs: [
       "https://www.youtube.com/@tronxtv",
-      "https://www.instagram.com/tronxtv/",
+      "https://www.instagram.com/tronxtv",
       "https://www.tiktok.com/@tronxtv",
+      "https://www.facebook.com/tronxtv",
     ],
   };
 
