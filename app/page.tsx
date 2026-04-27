@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section className="min-h-screen flex items-end px-6 md:px-12 pb-24">
         <div className="max-w-3xl">
 
@@ -13,6 +13,7 @@ export default function Home() {
           </h1>
 
           <p className="text-white/70 text-lg mb-8 max-w-md">
+            Canal editorial chileno.
             Documentales sobre personas reales enfrentando días reales.
           </p>
 
@@ -27,14 +28,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FRASE EDITORIAL */}
+      {/* ================= FRASE ================= */}
       <section className="px-6 md:px-12 py-20 border-t border-white/10">
         <p className="text-2xl md:text-3xl text-white/80 max-w-xl">
           Sin guión. Sin intervención.
         </p>
       </section>
 
-      {/* REALITY DAY */}
+      {/* ================= REALITY DAY ================= */}
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
         <div className="max-w-2xl">
 
@@ -53,9 +54,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* LO QUE VIENE */}
+      {/* ================= EPISODIOS ================= */}
+      <section className="px-6 md:px-12 pb-24">
+
+        <div className="max-w-5xl">
+
+          <p className="text-white/50 text-sm tracking-widest uppercase mb-10">
+            Últimos episodios
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+
+            {/* EP1 */}
+            <a
+              href="https://www.youtube.com/@tronxtv"
+              target="_blank"
+              className="group"
+            >
+              <div className="relative aspect-video overflow-hidden bg-neutral-900">
+
+                <img
+                  src="/ep1_thumb.jpg"
+                  alt="Reality Day Episodio 1"
+                  className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+                />
+
+              </div>
+
+              <div className="mt-3 text-sm text-white/80 group-hover:text-white transition">
+                T1 E1 — El mimbre no espera
+              </div>
+            </a>
+
+            {/* EP2 */}
+            <a
+              href="https://www.youtube.com/@tronxtv"
+              target="_blank"
+              className="group"
+            >
+              <div className="relative aspect-video overflow-hidden bg-neutral-900">
+
+                <img
+                  src="/ep2_thumb.jpg"
+                  alt="Reality Day Episodio 2"
+                  className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+                />
+
+              </div>
+
+              <div className="mt-3 text-sm text-white/80 group-hover:text-white transition">
+                T1 E2 — No era solo mantención
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= FUTURO ================= */}
       <section className="px-6 md:px-12 py-20 border-t border-white/10">
-        <p className="text-white/60 text-sm tracking-widest uppercase mb-4">
+
+        <p className="text-white/50 text-sm tracking-widest uppercase mb-4">
           En desarrollo
         </p>
 
@@ -63,10 +124,12 @@ export default function Home() {
           <div>Ídolos</div>
           <div className="text-white/50">Series especiales</div>
         </div>
+
       </section>
 
-      {/* PRODUCCIÓN */}
+      {/* ================= PRODUCCIÓN ================= */}
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
+
         <div className="max-w-xl">
 
           <p className="text-white/70 mb-6">
@@ -78,6 +141,7 @@ export default function Home() {
           </a>
 
         </div>
+
       </section>
 
     </main>
