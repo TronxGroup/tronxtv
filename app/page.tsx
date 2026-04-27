@@ -3,19 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tronx TV — Chile desde adentro</title>
 
+<title>Tronx TV — Chile desde adentro</title>
 <meta name="description" content="Canal editorial chileno. Series documentales, vodcast y producciones originales. Chile desde adentro.">
 <meta name="theme-color" content="#0D0D0D">
 
+<!-- PRECONNECT (MEJORA CARGA) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES */
 :root {
   --negro: #0D0D0D;
   --blanco: #F2EFE8;
@@ -36,15 +44,15 @@ body {
   overflow-x: hidden;
 }
 
-/* NOISE */
+/* NOISE (BAJADO OPACITY PARA PERFORMANCE) */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0.3;
+  z-index: 1;
+  opacity: 0.2;
 }
 
 /* NAV */
@@ -171,11 +179,15 @@ nav {
   color: var(--blanco);
 }
 
-/* PROGRAMAS */
-.programas {
-  padding: 100px 48px;
+/* SECCIONES */
+.manifiesto,
+.programas,
+.branded {
+  padding: 120px 48px;
+  border-top: 1px solid var(--linea);
 }
 
+/* GRID PROGRAMAS */
 .programas-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -186,6 +198,11 @@ nav {
 .programa-card {
   padding: 40px;
   background: var(--negro);
+  transition: background 0.3s;
+}
+
+.programa-card:hover {
+  background: var(--gris-claro);
 }
 
 .card-name {
@@ -198,20 +215,22 @@ nav {
 footer {
   padding: 60px 48px;
   border-top: 1px solid var(--linea);
-  text-align: center;
 }
 
 .footer-copy {
   font-size: 11px;
   color: var(--gris);
+  text-align: center;
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+  nav { padding: 20px; }
   .nav-links { display: none; }
   .programas-grid { grid-template-columns: 1fr; }
   .hero { padding: 0 24px 60px; }
 }
+
 </style>
 </head>
 
@@ -222,8 +241,10 @@ footer {
     <div class="nav-star"></div>
     Tronx<span>TV</span>
   </a>
+
   <ul class="nav-links">
     <li><a href="#programas">Programas</a></li>
+    <li><a href="#produccion">Producción</a></li>
     <li><a href="mailto:info@tronxtv.com">Contacto</a></li>
   </ul>
 </nav>
@@ -239,7 +260,7 @@ footer {
     </h1>
 
     <p class="hero-sub">
-      Documentales y series sobre personas reales enfrentando días reales.
+      Documentales, series y vodcast sobre personas reales enfrentando días reales.
     </p>
 
     <div class="hero-cta">
