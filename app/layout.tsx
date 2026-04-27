@@ -71,28 +71,24 @@ function Header() {
         {/* NAV → SECCIONES DEL HOME */}
         <nav className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.25em] uppercase text-white/50">
 
-          <a href="#reality" className="hover:text-white transition">
-            Reality Day
-          </a>
+  <a href="#reality" className="hover:text-white transition">
+    Reality Day
+  </a>
 
-          <a href="#episodios" className="hover:text-white transition">
-            Episodios
-          </a>
+  <a href="#episodios" className="hover:text-white transition">
+    Episodios
+  </a>
 
-          <a href="#produccion" className="hover:text-white transition">
-            Producción
-          </a>
+  <a
+    href="https://www.youtube.com/@tronxtv"
+    target="_blank"
+    rel="noreferrer"
+    className="border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition"
+  >
+    YouTube
+  </a>
 
-          <a
-            href="https://www.youtube.com/@tronxtv"
-            target="_blank"
-            rel="noreferrer"
-            className="border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition"
-          >
-            YouTube
-          </a>
-
-        </nav>
+</nav>
       </div>
     </header>
   );
