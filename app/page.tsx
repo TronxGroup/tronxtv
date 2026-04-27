@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       {/* ================= FUTURO ================= */}
-      <section className="px-6 md:px-12 py-20 border-t border-white/10">
+      <section className="px-6 md:px-12 py-20 border-t border-white/10 pb-32">
 
         <p className="text-white/50 text-sm tracking-widest uppercase mb-4">
           En desarrollo
@@ -119,23 +119,6 @@ export default function Home() {
         <div className="text-2xl space-y-2">
           <div>Ídolos</div>
           <div className="text-white/50">Series especiales</div>
-        </div>
-
-      </section>
-
-      {/* ================= PRODUCCIÓN ================= */}
-      <section id="produccion" className="px-6 md:px-12 py-24 border-t border-white/10">
-
-        <div className="max-w-xl">
-
-          <p className="text-white/70 mb-6">
-            Producción documental para empresas e instituciones.
-          </p>
-
-          <a href="/produccion" className="underline text-white">
-            Ver más
-          </a>
-
         </div>
 
       </section>
