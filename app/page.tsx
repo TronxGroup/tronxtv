@@ -73,7 +73,7 @@ export default function Home() {
             >
               <div className="relative aspect-video overflow-hidden bg-neutral-900">
                 <img
-                  src="/RealityDay_Ep1_Youtube.png"
+                  src="/RD_Caratula_Ep01.png"
                   alt="Reality Day Episodio 1"
                   className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
                 />
@@ -92,7 +92,7 @@ export default function Home() {
             >
               <div className="relative aspect-video overflow-hidden bg-neutral-900">
                 <img
-                  src="/RealityDay_Ep2_Youtube.png"
+                  src="/RD_Caratula_Ep02.png"
                   alt="Reality Day Episodio 2"
                   className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
                 />
