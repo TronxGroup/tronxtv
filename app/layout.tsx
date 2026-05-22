@@ -4,7 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
 
-const siteUrl = "https://www.tronxtv.com";
+const siteUrl = "https://www.tronxmedia.cl";
 
 /* =========================
    METADATA
@@ -21,22 +21,89 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Tronx TV — Canal editorial chileno",
-    template: "%s | Tronx TV",
+    default: "Tronx Media — Canal editorial chileno",
+    template: "%s | Tronx Media",
   },
 
   description:
-    "Canal editorial chileno. Documentales sobre personas reales y trabajo real en Chile.",
+    "Tronx Media es un canal editorial chileno enfocado en documentales sobre personas reales, historias reales y trabajo real en Chile.",
+
+  keywords: [
+    "Tronx Media",
+    "Reality Day",
+    "documentales chile",
+    "canal editorial chileno",
+    "historias reales",
+    "documental chileno",
+    "personas reales",
+    "trabajo real",
+    "oficios chile",
+    "empresas chile",
+    "documentary chile",
+    "reality day chile",
+  ],
+
+  applicationName: "Tronx Media",
+
+  creator: "Tronx Media",
+
+  publisher: "Tronx Media",
+
+  category: "Entertainment",
+
+  alternates: {
+    canonical: siteUrl,
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 
   icons: {
     icon: "/favicon_tronxtv.png",
+    apple: "/favicon_tronxtv.png",
   },
 
   openGraph: {
     type: "website",
+
+    locale: "es_CL",
+
     url: siteUrl,
-    title: "Tronx TV",
-    description: "Documentales sobre personas reales en Chile.",
+
+    siteName: "Tronx Media",
+
+    title: "Tronx Media — Canal editorial chileno",
+
+    description:
+      "Documentales sobre personas reales, historias reales y trabajo real en Chile.",
+
+    images: [
+      {
+        url: "/og-tronxtv.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tronx Media",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title: "Tronx Media",
+
+    description:
+      "Documentales sobre personas reales y trabajo real en Chile.",
+
     images: ["/og-tronxtv.jpg"],
   },
 };
@@ -53,43 +120,55 @@ function Header() {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3 group">
+
           <div className="relative w-10 h-10">
+
             <Image
               src="/2025_logo_tronx_tv.png"
-              alt="Tronx TV"
+              alt="Tronx Media"
               fill
               className="object-contain"
               priority
             />
+
           </div>
 
           <span className="text-sm tracking-[0.3em] uppercase text-white/80 group-hover:text-white transition">
-            Tronx TV
+            Tronx Media
           </span>
+
         </Link>
 
-        {/* NAV → SECCIONES DEL HOME */}
+        {/* NAV */}
         <nav className="hidden md:flex items-center gap-10 text-[11px] tracking-[0.25em] uppercase text-white/50">
 
-  <a href="#reality" className="hover:text-white transition">
-    Reality Day
-  </a>
+          <a
+            href="#reality"
+            className="hover:text-white transition"
+          >
+            Reality Day
+          </a>
 
-  <a href="#episodios" className="hover:text-white transition">
-    Episodios
-  </a>
+          <a
+            href="#episodios"
+            className="hover:text-white transition"
+          >
+            Episodios
+          </a>
 
-  <a
-    href="https://www.youtube.com/@tronxtv"
-    target="_blank"
-    rel="noreferrer"
-    className="border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition"
-  >
-    YouTube
-  </a>
+          <a
+            href="https://www.youtube.com/@tronxmedia"
+            target="_blank"
+            rel="noreferrer"
+            className="border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition"
+          >
+            YouTube
+          </a>
 
-</nav>
+        </nav>
+
       </div>
+
     </header>
   );
 }
@@ -104,20 +183,25 @@ function Footer() {
 
       <div className="max-w-6xl mx-auto px-6 py-20">
 
-        {/* LOGO + LINK ARRIBA */}
-        <Link href="/" className="flex items-center gap-3 mb-10 group">
+        {/* LOGO */}
+        <Link
+          href="/"
+          className="flex items-center gap-3 mb-10 group"
+        >
 
           <div className="relative w-10 h-10">
+
             <Image
               src="/2025_logo_tronx_tv.png"
-              alt="Tronx TV"
+              alt="Tronx Media"
               fill
               className="object-contain"
             />
+
           </div>
 
           <span className="text-xs tracking-[0.3em] uppercase text-white/60 group-hover:text-white transition">
-            Tronx TV
+            Tronx Media
           </span>
 
         </Link>
@@ -125,19 +209,39 @@ function Footer() {
         {/* REDES */}
         <div className="flex flex-wrap gap-6 text-sm text-white/60">
 
-          <a href="https://www.youtube.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+          <a
+            href="https://www.youtube.com/@tronxmedia"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition"
+          >
             YouTube
           </a>
 
-          <a href="https://www.instagram.com/tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+          <a
+            href="https://www.instagram.com/tronxmedia"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition"
+          >
             Instagram
           </a>
 
-          <a href="https://www.tiktok.com/@tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+          <a
+            href="https://www.tiktok.com/@tronx.media"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition"
+          >
             TikTok
           </a>
 
-          <a href="https://www.facebook.com/tronxtv" target="_blank" rel="noreferrer" className="hover:text-white">
+          <a
+            href="https://web.facebook.com/tronxmedia"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition"
+          >
             Facebook
           </a>
 
@@ -145,10 +249,11 @@ function Footer() {
 
         {/* COPY */}
         <div className="mt-12 text-xs text-white/40">
-          © {new Date().getFullYear()} Tronx TV · Chile
+          © {new Date().getFullYear()} Tronx Media · Chile
         </div>
 
       </div>
+
     </footer>
   );
 }
@@ -165,26 +270,63 @@ export default function RootLayout({
 
   const orgLdJson = {
     "@context": "https://schema.org",
+
     "@type": "Organization",
-    name: "Tronx TV",
+
+    name: "Tronx Media",
+
     url: siteUrl,
+
     logo: `${siteUrl}/favicon_tronxtv.png`,
+
     sameAs: [
-      "https://www.youtube.com/@tronxtv",
-      "https://www.instagram.com/tronxtv",
-      "https://www.tiktok.com/@tronxtv",
-      "https://www.facebook.com/tronxtv",
+      "https://www.youtube.com/@tronxmedia",
+      "https://www.instagram.com/tronxmedia",
+      "https://www.tiktok.com/@tronx.media",
+      "https://web.facebook.com/tronxmedia",
     ],
+  };
+
+  const websiteLdJson = {
+    "@context": "https://schema.org",
+
+    "@type": "WebSite",
+
+    name: "Tronx Media",
+
+    url: siteUrl,
+
+    potentialAction: {
+      "@type": "SearchAction",
+
+      target: `${siteUrl}/?q={search_term_string}`,
+
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (
     <html lang="es">
+
       <head>
+
+        {/* JSON LD */}
         <Script
           id="ld-org"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLdJson) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(orgLdJson),
+          }}
         />
+
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteLdJson),
+          }}
+        />
+
       </head>
 
       <body className="bg-black text-white antialiased selection:bg-white selection:text-black">
@@ -198,6 +340,7 @@ export default function RootLayout({
         <Footer />
 
       </body>
+
     </html>
   );
 }
