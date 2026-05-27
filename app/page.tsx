@@ -141,7 +141,7 @@ export default function Home() {
       </div>
 
       <div className="text-white/35 text-xs tracking-[0.25em] uppercase">
-        Formato 2880×1620 px · 16:9
+        Formato 2560×1440 px · 16:9
       </div>
 
     </div>
