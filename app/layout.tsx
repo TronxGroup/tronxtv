@@ -184,27 +184,40 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-20">
 
         {/* LOGO */}
-        <Link
-          href="/"
-          className="flex items-center gap-3 mb-10 group"
-        >
+<Link
+  href="/"
+  className="flex items-center gap-5 mb-12 group"
+>
 
-          <div className="relative w-10 h-10">
+  {/* LOGO MÁS GRANDE */}
+  <div className="relative w-20 h-20 md:w-28 md:h-28">
 
-            <Image
-              src="/2025_logo_tronx_tv.png"
-              alt="Tronx Media"
-              fill
-              className="object-contain"
-            />
+    <Image
+      src="/2025_logo_tronx_tv.png"
+      alt="Tronx Media"
+      fill
+      priority
+      className="object-contain drop-shadow-[0_0_25px_rgba(255,90,31,0.25)] transition duration-300 group-hover:scale-105"
+    />
 
-          </div>
+  </div>
 
-          <span className="text-xs tracking-[0.3em] uppercase text-white/60 group-hover:text-white transition">
-            Tronx Media
-          </span>
+  <div>
 
-        </Link>
+    <div className="text-2xl md:text-4xl font-semibold tracking-tight leading-none">
+      Tronx
+      <span className="text-[#ff5a1f]">
+        Media
+      </span>
+    </div>
+
+    <div className="text-xs tracking-[0.35em] uppercase text-white/40 mt-2">
+      Chile desde adentro
+    </div>
+
+  </div>
+
+</Link>
 
         {/* REDES */}
         <div className="flex flex-wrap gap-6 text-sm text-white/60">
