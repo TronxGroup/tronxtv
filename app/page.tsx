@@ -249,65 +249,7 @@ export default function Home() {
 
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="px-6 md:px-12 py-16 border-t border-white/10">
-
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-
-          <div>
-
-            <p className="text-xl mb-4">
-              Tronx Media
-            </p>
-
-            <p className="text-white/50 leading-7 max-w-sm">
-              Canal editorial chileno.
-              Personas reales. Historias reales.
-              Chile desde adentro.
-            </p>
-
-          </div>
-
-          <div className="space-y-3 text-sm text-white/50">
-
-            <a
-              href="https://www.youtube.com/@tronxmedia"
-              target="_blank"
-              className="block hover:text-white transition"
-            >
-              YouTube
-            </a>
-
-            <a
-              href="https://www.instagram.com/tronxmedia/"
-              target="_blank"
-              className="block hover:text-white transition"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.tiktok.com/@tronx.media"
-              target="_blank"
-              className="block hover:text-white transition"
-            >
-              TikTok
-            </a>
-
-            <a
-              href="https://web.facebook.com/tronxmedia"
-              target="_blank"
-              className="block hover:text-white transition"
-            >
-              Facebook
-            </a>
-
-          </div>
-
-        </div>
-
-      </footer>
-
+     
     </main>
   );
 }
