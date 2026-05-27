@@ -3,38 +3,76 @@ export default function Home() {
     <main className="bg-black text-white">
 
       {/* ================= HERO ================= */}
-      <section
-        id="hero"
-        className="min-h-screen flex items-end px-6 md:px-12 pb-24"
+<section
+  id="hero"
+  className="relative min-h-screen flex items-end px-6 md:px-12 pb-24 overflow-hidden"
+>
+
+  {/* Background */}
+  <div className="absolute inset-0">
+
+    <img
+      src="/backgraund_hero_tronxmedia.png"
+      alt="Tronx Media Hero"
+      className="w-full h-full object-cover"
+    />
+
+    {/* Dark cinematic overlay */}
+    <div className="absolute inset-0 bg-black/60" />
+
+    {/* Gradient */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+
+    {/* Vignette */}
+    <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(0,0,0,0.9)]" />
+
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-3xl">
+
+    <p className="text-white/50 text-xs tracking-[0.35em] uppercase mb-6">
+      Tronx Media
+    </p>
+
+    <h1 className="text-5xl md:text-8xl leading-[0.9] mb-8 font-semibold tracking-tight">
+      Chile
+      <br />
+      <span className="text-white/60">
+        desde
+      </span>
+      <br />
+      adentro.
+    </h1>
+
+    <p className="text-white/75 text-lg md:text-xl max-w-xl leading-8 mb-10">
+      Canal editorial chileno.
+      Historias reales, personas reales
+      y mundos que merecen ser contados.
+    </p>
+
+    <div className="flex flex-wrap gap-4">
+
+      <a
+        href="https://www.youtube.com/@tronxmedia"
+        target="_blank"
+        className="inline-flex items-center justify-center bg-[#ff5a1f] hover:bg-[#ff6b35] text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
       >
-        <div className="max-w-3xl">
+        Ver Reality Day
+      </a>
 
-          <p className="text-white/40 text-xs tracking-[0.3em] uppercase mb-6">
-            Tronx Media
-          </p>
+      <a
+        href="#episodios"
+        className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-sm text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
+      >
+        Explorar
+      </a>
 
-          <h1 className="text-5xl md:text-8xl leading-[0.9] mb-6">
-            Chile<br />
-            <span className="opacity-50">desde</span><br />
-            adentro.
-          </h1>
+    </div>
 
-          <p className="text-white/70 text-lg mb-8 max-w-md leading-8">
-            Canal editorial chileno.
-            Documentales sobre personas reales,
-            historias reales y trabajo real.
-          </p>
+  </div>
 
-          <a
-            href="https://www.youtube.com/@tronxmedia"
-            target="_blank"
-            className="inline-block bg-white text-black px-6 py-3 text-sm tracking-widest uppercase transition hover:bg-neutral-200"
-          >
-            Ver episodios
-          </a>
-
-        </div>
-      </section>
+</section>
 
       {/* ================= FRASE ================= */}
       <section className="px-6 md:px-12 py-20 border-t border-white/10">
