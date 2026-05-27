@@ -14,38 +14,41 @@ export default function Home() {
     <img
       src="/backgraund_hero_tronxmedia.png"
       alt="Tronx Media Hero"
-      className="w-full h-full object-cover"
+      className="w-full h-full object-cover scale-105"
     />
 
-    {/* Dark cinematic overlay */}
-    <div className="absolute inset-0 bg-black/60" />
+    {/* Overlay más suave */}
+    <div className="absolute inset-0 bg-black/35" />
 
-    {/* Gradient */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10" />
+    {/* Gradient más liviano */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-    {/* Vignette */}
-    <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(0,0,0,0.9)]" />
+    {/* Vignette más cinematográfico */}
+    <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.45)]" />
+
+    {/* Glow naranja sutil */}
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,90,31,0.12),transparent_55%)]" />
 
   </div>
 
   {/* Content */}
   <div className="relative z-10 max-w-3xl">
 
-    <p className="text-white/50 text-xs tracking-[0.35em] uppercase mb-6">
+    <p className="text-white/60 text-xs tracking-[0.35em] uppercase mb-6">
       Tronx Media
     </p>
 
-    <h1 className="text-5xl md:text-8xl leading-[0.9] mb-8 font-semibold tracking-tight">
+    <h1 className="text-5xl md:text-8xl leading-[0.9] mb-8 font-semibold tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.55)]">
       Chile
       <br />
-      <span className="text-white/60">
+      <span className="text-white/70">
         desde
       </span>
       <br />
       adentro.
     </h1>
 
-    <p className="text-white/75 text-lg md:text-xl max-w-xl leading-8 mb-10">
+    <p className="text-white/80 text-lg md:text-xl max-w-xl leading-8 mb-10 drop-shadow-[0_5px_20px_rgba(0,0,0,0.45)]">
       Canal editorial chileno.
       Historias reales, personas reales
       y mundos que merecen ser contados.
@@ -56,14 +59,14 @@ export default function Home() {
       <a
         href="https://www.youtube.com/@tronxmedia"
         target="_blank"
-        className="inline-flex items-center justify-center bg-[#ff5a1f] hover:bg-[#ff6b35] text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
+        className="inline-flex items-center justify-center bg-[#ff5a1f] hover:bg-[#ff6b35] text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300 shadow-[0_10px_30px_rgba(255,90,31,0.35)]"
       >
         Ver Reality Day
       </a>
 
       <a
         href="#episodios"
-        className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 bg-white/5 backdrop-blur-sm text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
+        className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 bg-white/10 backdrop-blur-sm text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
       >
         Explorar
       </a>
