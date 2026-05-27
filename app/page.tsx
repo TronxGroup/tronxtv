@@ -120,104 +120,161 @@ export default function Home() {
       {/* ================= EPISODIOS ================= */}
 <section
   id="episodios"
-  className="px-6 md:px-12 pb-24"
+  className="px-6 md:px-12 pb-28"
 >
 
-  <div className="max-w-6xl">
+  <div className="max-w-7xl mx-auto">
 
-    <p className="text-white/50 text-sm tracking-widest uppercase mb-10">
-      Últimos episodios
-    </p>
+    {/* HEADER */}
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
 
-    <div className="grid md:grid-cols-3 gap-6">
+      <div>
 
-      {/* EP1 */}
+        <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
+          Últimos episodios
+        </p>
+
+        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
+          Reality Day
+        </h2>
+
+      </div>
+
+      <div className="text-white/35 text-xs tracking-[0.25em] uppercase">
+        Formato 2880×1620 px · 16:9
+      </div>
+
+    </div>
+
+    {/* GRID */}
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* ================= EP1 ================= */}
       <a
         href="https://www.youtube.com/@tronxmedia"
         target="_blank"
         className="group"
       >
 
-        <div className="relative aspect-video overflow-hidden bg-neutral-900">
+        <div className="relative aspect-video overflow-hidden bg-neutral-900 rounded-2xl border border-white/10">
 
           <img
             src="/RD_Caratula_Ep01.png"
             alt="Reality Day Episodio 1"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
           />
 
-        </div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-        <div className="mt-3">
+          {/* Fecha */}
+          <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm border border-white/10 px-3 py-2 rounded-full">
 
-          <p className="text-white/40 text-xs tracking-[0.2em] uppercase mb-2">
-            Reality Day
-          </p>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-white/70">
+              Abril 2026
+            </p>
 
-          <div className="text-sm text-white/80 group-hover:text-white transition">
-            T1 E1 — El mimbre no espera
+          </div>
+
+          {/* Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+
+            <p className="text-white/40 text-[11px] tracking-[0.25em] uppercase mb-2">
+              Reality Day
+            </p>
+
+            <h3 className="text-xl text-white font-medium leading-tight">
+              T1 E1 — El mimbre no espera
+            </h3>
+
           </div>
 
         </div>
 
       </a>
 
-      {/* EP2 */}
+      {/* ================= EP2 ================= */}
       <a
         href="https://www.youtube.com/@tronxmedia"
         target="_blank"
         className="group"
       >
 
-        <div className="relative aspect-video overflow-hidden bg-neutral-900">
+        <div className="relative aspect-video overflow-hidden bg-neutral-900 rounded-2xl border border-white/10">
 
           <img
             src="/RD_Caratula_Ep02.png"
             alt="Reality Day Episodio 2"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
           />
 
-        </div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-        <div className="mt-3">
+          {/* Fecha */}
+          <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm border border-white/10 px-3 py-2 rounded-full">
 
-          <p className="text-white/40 text-xs tracking-[0.2em] uppercase mb-2">
-            Reality Day
-          </p>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-white/70">
+              Mayo 2026
+            </p>
 
-          <div className="text-sm text-white/80 group-hover:text-white transition">
-            T1 E2 — No era solo mantención
+          </div>
+
+          {/* Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+
+            <p className="text-white/40 text-[11px] tracking-[0.25em] uppercase mb-2">
+              Reality Day
+            </p>
+
+            <h3 className="text-xl text-white font-medium leading-tight">
+              T1 E2 — No era solo mantención
+            </h3>
+
           </div>
 
         </div>
 
       </a>
 
-      {/* EP3 */}
+      {/* ================= EP3 ================= */}
       <a
         href="https://www.youtube.com/@tronxmedia"
         target="_blank"
         className="group"
       >
 
-        <div className="relative aspect-video overflow-hidden bg-neutral-900">
+        <div className="relative aspect-video overflow-hidden bg-neutral-900 rounded-2xl border border-white/10">
 
           <img
             src="/RD_Caratula_Ep03.png"
             alt="Reality Day Episodio 3"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-500"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
           />
 
-        </div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-        <div className="mt-3">
+          {/* Fecha */}
+          <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm border border-white/10 px-3 py-2 rounded-full">
 
-          <p className="text-white/40 text-xs tracking-[0.2em] uppercase mb-2">
-            Reality Day
-          </p>
+            <p className="text-[10px] tracking-[0.25em] uppercase text-white/70">
+              Junio 2026
+            </p>
 
-          <div className="text-sm text-white/80 group-hover:text-white transition">
-            T1 E3 — La Morenita
+          </div>
+
+          {/* Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-6">
+
+            <p className="text-white/40 text-[11px] tracking-[0.25em] uppercase mb-2">
+              Reality Day
+            </p>
+
+            <h3 className="text-xl text-white font-medium leading-tight">
+              T1 E3 — La Morenita
+            </h3>
+
           </div>
 
         </div>
