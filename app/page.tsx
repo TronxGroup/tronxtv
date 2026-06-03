@@ -40,9 +40,9 @@ export default function Home() {
           </h1>
 
           <p className="text-white/80 text-lg md:text-xl max-w-xl leading-8 mb-10">
-            Documentamos personas, oficios, empresas e instituciones
-            que forman parte de la vida cotidiana del país.
-          </p>
+  Historias, documentales y series originales
+  para entender Chile desde adentro.
+</p>
 
           <div className="flex flex-wrap gap-4">
 
@@ -70,31 +70,40 @@ export default function Home() {
 
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
 
-        <div className="max-w-3xl">
+  <div className="max-w-3xl">
 
-          <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
-            Tronx Media
-          </p>
+    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
+      Tronx Media
+    </p>
 
-          <h2 className="text-4xl md:text-6xl mb-8">
-            Historias reales de Chile.
-          </h2>
+    <h2 className="text-4xl md:text-6xl mb-8">
+      Chile, desde adentro.
+    </h2>
 
-          <p className="text-white/70 leading-8 text-lg mb-6">
-            Tronx Media es un canal editorial chileno dedicado
-            a documentar el trabajo, las personas y los lugares
-            que forman parte de la vida cotidiana del país.
-          </p>
+    <p className="text-white/70 leading-8 text-lg mb-6">
+      Tronx Media es un canal editorial chileno
+      dedicado a crear y publicar contenido original.
+    </p>
 
-          <p className="text-white/60 leading-8">
-            Buscamos historias que normalmente pasan desapercibidas:
-            oficios, empresas, instituciones y proyectos que ayudan
-            a entender cómo funciona Chile desde adentro.
-          </p>
+    <p className="text-white/60 leading-8">
+      Exploramos personas, ideas, proyectos,
+      empresas, instituciones y realidades que ayudan
+      a entender Chile desde distintas perspectivas.
+    </p>
 
-        </div>
+    <p className="text-white/60 leading-8 mt-6">
+      Creemos que las historias más interesantes
+      muchas veces ocurren lejos de los titulares.
+    </p>
 
-      </section>
+    <p className="text-white/60 leading-8 mt-6">
+      Buscamos temas que merecen ser observados,
+      documentados y contados con profundidad.
+    </p>
+
+  </div>
+
+</section>
 
       {/* ================= REALITY DAY ================= */}
 
@@ -118,12 +127,16 @@ export default function Home() {
           </p>
 
           <p className="text-white/60 leading-8 mb-10">
-            Reality Day acompaña durante algunas horas
-            a personas reales en su lugar de trabajo.
-            No hay conductor.
-            No hay entrevistas tradicionales.
-            Solo observación.
-          </p>
+  Reality Day acompaña durante algunas horas
+  a personas reales en su lugar de trabajo.
+
+  No hay conductor.
+  No hay entrevistas tradicionales.
+  Solo observación.
+
+  Oficios, empresas e instituciones de Chile
+  tal como funcionan en un día cualquiera.
+</p>
 
           <div className="flex flex-wrap gap-3">
 
@@ -282,77 +295,56 @@ export default function Home() {
 
       <section className="px-6 md:px-12 py-28 border-t border-white/10">
 
-        <div className="max-w-4xl">
+  <div className="max-w-4xl">
 
-          <h2 className="text-4xl md:text-6xl leading-tight mb-10">
-            Personas que dejan huella.
-            <br />
-            Decisiones que definen el día.
-          </h2>
+    <h2 className="text-4xl md:text-6xl leading-tight mb-10">
+      Personas que dejan huella.
+      <br />
+      Decisiones que definen el día.
+    </h2>
 
-          <p className="text-white/60 text-lg leading-9">
-            Detrás de cada negocio, institución u oficio
-            hay personas tomando decisiones, resolviendo problemas
-            y haciendo que las cosas funcionen.
-            Eso es lo que buscamos documentar.
-          </p>
+    <p className="text-white/60 text-lg leading-9">
+      Detrás de cada decisión,
+      proyecto, institución, empresa o historia
+      hay personas intentando hacer que las cosas funcionen.
+    </p>
 
-        </div>
+    <p className="text-white/60 text-lg leading-9 mt-6">
+      Eso es lo que buscamos documentar.
+    </p>
 
-      </section>
+  </div>
+
+</section>
 
       {/* ================= FUTURO ================= */}
 
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
 
-        <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
-          Próximamente
-        </p>
+  <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
+    Próximamente
+  </p>
 
-        <h2 className="text-3xl md:text-5xl mb-6">
-          Nuevas historias.
-        </h2>
+  <h2 className="text-3xl md:text-5xl mb-6">
+    Nuevas historias.
+  </h2>
 
-        <p className="text-white/60 max-w-2xl leading-8">
-          Nuevos episodios de Reality Day.
-          Nuevas series.
-          Nuevas historias reales de Chile.
-        </p>
+  <p className="text-white/60 max-w-2xl leading-8">
+    Reality Day es solo el comienzo.
+  </p>
 
-      </section>
+  <p className="text-white/60 max-w-2xl leading-8 mt-4">
+    Nuevas series.
+    Nuevos formatos.
+    Nuevas historias.
+  </p>
 
-      {/* ================= FOOTER ================= */}
+  <p className="text-white/60 max-w-2xl leading-8 mt-4">
+    Siempre desde Chile.
+  </p>
 
-      <footer className="px-6 md:px-12 py-12 border-t border-white/10">
+</section>
 
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-
-          <div>
-
-            <h3 className="text-lg mb-2">
-              Tronx Media
-            </h3>
-
-            <p className="text-white/50">
-              Canal editorial chileno.
-            </p>
-
-          </div>
-
-          <div className="text-white/50 space-y-2">
-            <div>YouTube</div>
-            <div>Instagram</div>
-            <div>TikTok</div>
-          </div>
-
-        </div>
-
-        <div className="text-white/30 text-sm mt-12">
-          © 2026 Tronx Media. Todos los derechos reservados.
-        </div>
-
-      </footer>
-
-    </main>
+        </main>
   );
 }
