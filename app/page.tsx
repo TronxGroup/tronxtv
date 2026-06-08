@@ -315,25 +315,22 @@ export default function Home() {
     </h2>
 
     <p className="text-white/60 text-lg leading-9">
-      Las historias más interesantes muchas veces ocurren lejos
-      de los titulares, los estudios y las redes sociales.
+      Se entiende a través de sus personas,
+      instituciones, empresas, comunidades e historias.
     </p>
 
     <p className="text-white/60 text-lg leading-9 mt-6">
-      Ocurren en talleres, restaurantes, oficinas, cuarteles,
-      fábricas, hospitales y pequeños negocios que funcionan todos
-      los días sin llamar la atención.
+      Tronx Media crea documentales, series y
+      contenidos originales para explorar las distintas
+      realidades que conviven en el país.
     </p>
 
     <p className="text-white/60 text-lg leading-9 mt-6">
-      Eso es lo que buscamos documentar.
+      No buscamos explicar Chile.
     </p>
 
     <p className="text-white/70 text-lg leading-9 mt-10">
-      Entramos.
-      Observamos.
-      Comprendemos.
-      Nos vamos.
+      Buscamos comprenderlo.
     </p>
 
   </div>
