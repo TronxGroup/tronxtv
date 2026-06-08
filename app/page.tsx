@@ -86,9 +86,9 @@ export default function Home() {
     </p>
 
     <p className="text-white/60 leading-8">
-      Exploramos personas, ideas, proyectos,
-      empresas, instituciones y realidades que ayudan
-      a entender Chile desde distintas perspectivas.
+      Documentamos cómo trabajan las personas,
+      empresas e instituciones que ayudan
+      a construir la vida cotidiana de Chile.
     </p>
 
     <p className="text-white/60 leading-8 mt-6">
@@ -107,210 +107,233 @@ export default function Home() {
 
       {/* ================= REALITY DAY ================= */}
 
-      <section
-        id="reality"
-        className="px-6 md:px-12 py-24 border-t border-white/10"
+<section
+  id="reality"
+  className="px-6 md:px-12 py-24 border-t border-white/10"
+>
+
+  <div className="max-w-3xl">
+
+    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
+      Serie original
+    </p>
+
+    <h2 className="text-4xl md:text-6xl mb-6">
+      Reality Day
+    </h2>
+
+    <p className="text-white/70 text-xl mb-8">
+      Un día real de trabajo.
+    </p>
+
+    <p className="text-white/60 leading-8 mb-10">
+      Reality Day observa durante algunas horas cómo funciona
+      realmente un lugar de trabajo.
+
+      Sin conductor.
+      Sin intervención.
+      Sin dramatización.
+
+      Oficios, empresas e instituciones de Chile
+      tal como ocurren en un día cualquiera.
+
+      Llegamos.
+      Observamos.
+      Nos vamos cuando termina el día.
+    </p>
+
+    <div className="flex flex-wrap gap-3">
+
+      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
+        Sin guión
+      </span>
+
+      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
+        Sin intervención
+      </span>
+
+      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
+        Trabajo real
+      </span>
+
+    </div>
+
+    <p className="text-white/40 text-sm tracking-widest uppercase mt-8">
+      Temporada 1 — En emisión
+    </p>
+
+  </div>
+
+</section>
+
+{/* ================= EPISODIOS ================= */}
+
+<section
+  id="episodios"
+  className="px-6 md:px-12 pb-28 border-t border-white/10 pt-24"
+>
+
+  <div className="max-w-7xl mx-auto">
+
+    <div className="mb-12">
+
+      <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
+        Últimos episodios
+      </p>
+
+      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
+        Reality Day
+      </h2>
+
+      <p className="text-white/60">
+        Oficios, empresas e instituciones de Chile.
+      </p>
+
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {/* EP1 */}
+
+      <a
+        href="https://youtu.be/acC3dyDKqe8"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group"
       >
+        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
 
-        <div className="max-w-3xl">
+          <img
+            src="/RD_Caratula_Ep01.png"
+            alt="Reality Day T1 E1"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
+          />
 
-          <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
-            Serie original
-          </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
-          <h2 className="text-4xl md:text-6xl mb-6">
-            Reality Day
-          </h2>
+          <div className="absolute bottom-0 p-6">
 
-          <p className="text-white/70 text-xl mb-8">
-            Un día real de trabajo.
-          </p>
+            <h3 className="text-xl mb-2">
+              T1 E1 — El mimbre no espera
+            </h3>
 
-          <p className="text-white/60 leading-8 mb-10">
-  Reality Day acompaña durante algunas horas
-  a personas reales en su lugar de trabajo.
-
-  No hay conductor.
-  No hay entrevistas tradicionales.
-  Solo observación.
-
-  Oficios, empresas e instituciones de Chile
-  tal como funcionan en un día cualquiera.
-</p>
-
-          <div className="flex flex-wrap gap-3">
-
-            <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-              Sin guión
-            </span>
-
-            <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-              Sin intervención
-            </span>
-
-            <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-              Sin filtros
-            </span>
-
-          </div>
-
-          <p className="text-white/40 text-sm tracking-widest uppercase mt-8">
-            Temporada 1 — En emisión
-          </p>
-
-        </div>
-
-      </section>
-
-      {/* ================= EPISODIOS ================= */}
-
-      <section
-        id="episodios"
-        className="px-6 md:px-12 pb-28 border-t border-white/10 pt-24"
-      >
-
-        <div className="max-w-7xl mx-auto">
-
-          <div className="mb-12">
-
-            <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
-              Últimos episodios
+            <p className="text-white/60 text-sm">
+              Un día real en un taller familiar de mimbre en Ñuñoa.
             </p>
-
-            <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-              Reality Day
-            </h2>
-
-            <p className="text-white/60">
-              Oficios, empresas e instituciones de Chile.
-            </p>
-
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            {/* EP1 */}
-
-            <a
-              href="https://www.youtube.com/@tronxmedia"
-              target="_blank"
-              className="group"
-            >
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
-
-                <img
-                  src="/RD_Caratula_Ep01.png"
-                  alt=""
-                  className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-                <div className="absolute bottom-0 p-6">
-
-                  <h3 className="text-xl mb-2">
-                    T1 E1 — El mimbre no espera
-                  </h3>
-
-                  <p className="text-white/60 text-sm">
-                    Un taller familiar dedicado al mimbre en Ñuñoa.
-                  </p>
-
-                </div>
-
-              </div>
-            </a>
-
-            {/* EP2 */}
-
-            <a
-              href="https://www.youtube.com/@tronxmedia"
-              target="_blank"
-              className="group"
-            >
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
-
-                <img
-                  src="/RD_Caratula_Ep02.png"
-                  alt=""
-                  className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-                <div className="absolute bottom-0 p-6">
-
-                  <h3 className="text-xl mb-2">
-                    T1 E2 — No era solo mantención
-                  </h3>
-
-                  <p className="text-white/60 text-sm">
-                    Un taller mecánico enfrenta una falla que nadie logra explicar.
-                  </p>
-
-                </div>
-
-              </div>
-            </a>
-
-            {/* EP3 */}
-
-            <a
-              href="https://www.youtube.com/@tronxmedia"
-              target="_blank"
-              className="group"
-            >
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
-
-                <img
-                  src="/RD_Caratula_Ep03.png"
-                  alt=""
-                  className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-
-                <div className="absolute bottom-0 p-6">
-
-                  <h3 className="text-xl mb-2">
-                    T1 E3 — La Morenita
-                  </h3>
-
-                  <p className="text-white/60 text-sm">
-                    Una tarde de trabajo en una pescadería y restaurante de Pirque.
-                  </p>
-
-                </div>
-
-              </div>
-            </a>
 
           </div>
 
         </div>
+      </a>
 
-      </section>
+      {/* EP2 */}
 
-      {/* ================= MANIFIESTO ================= */}
+      <a
+        href="https://youtu.be/_xtAoqqaaEQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group"
+      >
+        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
 
-      <section className="px-6 md:px-12 py-28 border-t border-white/10">
+          <img
+            src="/RD_Caratula_Ep02.png"
+            alt="Reality Day T1 E2"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+          <div className="absolute bottom-0 p-6">
+
+            <h3 className="text-xl mb-2">
+              T1 E2 — No era solo mantención
+            </h3>
+
+            <p className="text-white/60 text-sm">
+              Un día real en un taller mecánico de Santiago.
+            </p>
+
+          </div>
+
+        </div>
+      </a>
+
+      {/* EP3 */}
+
+      <a
+        href="https://youtu.be/3VhmLGZGqV4"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group"
+      >
+        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+
+          <img
+            src="/RD_Caratula_Ep03.png"
+            alt="Reality Day T1 E3"
+            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+
+          <div className="absolute bottom-0 p-6">
+
+            <h3 className="text-xl mb-2">
+              T1 E3 — La Morenita
+            </h3>
+
+            <p className="text-white/60 text-sm">
+              Un día real en una pescadería y restaurante de Pirque.
+            </p>
+
+          </div>
+
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+{/* ================= MANIFIESTO ================= */}
+
+<section className="px-6 md:px-12 py-28 border-t border-white/10">
 
   <div className="max-w-4xl">
 
+    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-6">
+      Manifiesto
+    </p>
+
     <h2 className="text-4xl md:text-6xl leading-tight mb-10">
-      Personas que dejan huella.
+      Chile no se entiende
       <br />
-      Decisiones que definen el día.
+      desde afuera.
     </h2>
 
     <p className="text-white/60 text-lg leading-9">
-      Detrás de cada decisión,
-      proyecto, institución, empresa o historia
-      hay personas intentando hacer que las cosas funcionen.
+      Las historias más interesantes muchas veces ocurren lejos
+      de los titulares, los estudios y las redes sociales.
+    </p>
+
+    <p className="text-white/60 text-lg leading-9 mt-6">
+      Ocurren en talleres, restaurantes, oficinas, cuarteles,
+      fábricas, hospitales y pequeños negocios que funcionan todos
+      los días sin llamar la atención.
     </p>
 
     <p className="text-white/60 text-lg leading-9 mt-6">
       Eso es lo que buscamos documentar.
+    </p>
+
+    <p className="text-white/70 text-lg leading-9 mt-10">
+      Entramos.
+      Observamos.
+      Comprendemos.
+      Nos vamos.
     </p>
 
   </div>
