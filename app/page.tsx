@@ -3,59 +3,64 @@ export default function Home() {
     <main className="bg-black text-white">
 
       {/* ================= HERO ================= */}
-      <section
-        id="hero"
-        className="relative min-h-screen flex items-end px-6 md:px-12 pb-24 overflow-hidden"
-      >
+
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+
+        {/* Background */}
 
         <div className="absolute inset-0">
 
           <img
             src="/backgraund_hero_tronxmedia.png"
             alt="Tronx Media"
-            className="w-full h-full object-cover scale-105"
+            className="w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <div className="absolute inset-0 shadow-[inset_0_0_120px_rgba(0,0,0,0.45)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,90,31,0.12),transparent_55%)]" />
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
         </div>
 
-        <div className="relative z-10 max-w-3xl">
+        {/* Content */}
 
-          <p className="text-white/60 text-xs tracking-[0.35em] uppercase mb-6">
-            Canal editorial chileno
+        <div className="relative z-10 px-6 md:px-12 pb-24 max-w-5xl">
+
+          <p className="text-white/50 uppercase tracking-[0.35em] text-xs mb-6">
+            Tronx Media
           </p>
 
-          <h1 className="text-5xl md:text-8xl leading-[0.9] mb-8 font-semibold tracking-tight">
-            Chile
+          <h1 className="text-5xl md:text-8xl leading-[0.95] font-semibold tracking-tight mb-8">
+
+            Historias reales
             <br />
-            <span className="text-white/70">
-              desde
-            </span>
+            de las personas
             <br />
-            adentro.
+            que hacen funcionar Chile.
+
           </h1>
 
-          <p className="text-white/80 text-lg md:text-xl max-w-xl leading-8 mb-10">
-  Historias, documentales y series originales
-  para entender Chile desde adentro.
-</p>
+          <p className="text-white/70 text-lg md:text-xl leading-8 max-w-3xl mb-10">
+
+            Documentales y series originales sobre trabajo,
+            oficios, empresas, instituciones y personas que
+            construyen el país cada día.
+
+          </p>
 
           <div className="flex flex-wrap gap-4">
 
             <a
-              href="#reality"
-              className="inline-flex items-center justify-center bg-[#ff5a1f] hover:bg-[#ff6b35] text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
+              href="https://youtu.be/3VhmLGZGqV4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#ff5a1f] hover:bg-[#ff6b35] transition px-8 py-4 uppercase text-sm tracking-[0.25em]"
             >
-              Ver Reality Day
+              Ver último episodio
             </a>
 
             <a
               href="#episodios"
-              className="inline-flex items-center justify-center border border-white/20 hover:border-white/50 bg-white/10 backdrop-blur-sm text-white px-8 py-4 text-sm tracking-[0.25em] uppercase transition duration-300"
+              className="border border-white/20 hover:border-white/40 transition px-8 py-4 uppercase text-sm tracking-[0.25em]"
             >
               Explorar
             </a>
@@ -66,305 +71,540 @@ export default function Home() {
 
       </section>
 
-      {/* ================= SOBRE ================= */}
+      {/* ================= FEATURED EPISODE ================= */}
 
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
 
-  <div className="max-w-3xl">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
-      Tronx Media
-    </p>
+          {/* Image */}
 
-    <h2 className="text-4xl md:text-6xl mb-8">
-      Chile, desde adentro.
-    </h2>
+          <div>
 
-    <p className="text-white/70 leading-8 text-lg mb-6">
-      Tronx Media es un canal editorial chileno
-      dedicado a crear y publicar contenido original.
-    </p>
+            <a
+              href="https://youtu.be/3VhmLGZGqV4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+            >
 
-    <p className="text-white/60 leading-8">
-      Documentamos cómo trabajan las personas,
-      empresas e instituciones que ayudan
-      a construir la vida cotidiana de Chile.
-    </p>
+              <div className="overflow-hidden rounded-2xl border border-white/10">
 
-    <p className="text-white/60 leading-8 mt-6">
-      Creemos que las historias más interesantes
-      muchas veces ocurren lejos de los titulares.
-    </p>
+                <img
+                  src="/RD_Caratula_Ep03.png"
+                  alt="Reality Day Episode 3"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
 
-    <p className="text-white/60 leading-8 mt-6">
-      Buscamos temas que merecen ser observados,
-      documentados y contados con profundidad.
-    </p>
+              </div>
 
-  </div>
+            </a>
 
-</section>
+          </div>
+
+          {/* Text */}
+
+          <div>
+
+            <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-5">
+              Último estreno
+            </p>
+
+            <h2 className="text-4xl md:text-5xl leading-tight mb-6">
+
+              De tener $30.000
+              <br />
+              en el banco
+              <br />
+              a llenar su restaurante.
+
+            </h2>
+
+            <p className="text-white/60 leading-8 text-lg mb-8">
+
+              Un día real en La Morenita, una pescadería y restaurante
+              en Pirque donde el trabajo no se detiene.
+
+              Sin actores.
+              Sin intervención.
+              Solo realidad.
+
+            </p>
+
+            <a
+              href="https://youtu.be/3VhmLGZGqV4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-[#ff5a1f] uppercase tracking-[0.25em] text-sm"
+            >
+              Ver episodio completo →
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
 
       {/* ================= REALITY DAY ================= */}
 
-<section
-  id="reality"
-  className="px-6 md:px-12 py-24 border-t border-white/10"
->
-
-  <div className="max-w-3xl">
-
-    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-5">
-      Serie original
-    </p>
-
-    <h2 className="text-4xl md:text-6xl mb-6">
-      Reality Day
-    </h2>
-
-    <p className="text-white/70 text-xl mb-8">
-      Un día real de trabajo.
-    </p>
-
-    <p className="text-white/60 leading-8 mb-10">
-      Reality Day observa durante algunas horas cómo funciona
-      realmente un lugar de trabajo.
-
-      Sin conductor.
-      Sin intervención.
-      Sin dramatización.
-
-      Oficios, empresas e instituciones de Chile
-      tal como ocurren en un día cualquiera.
-
-      Llegamos.
-      Observamos.
-      Nos vamos cuando termina el día.
-    </p>
-
-    <div className="flex flex-wrap gap-3">
-
-      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-        Sin guión
-      </span>
-
-      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-        Sin intervención
-      </span>
-
-      <span className="border border-white/15 px-4 py-2 text-sm text-white/80">
-        Trabajo real
-      </span>
-
-    </div>
-
-    <p className="text-white/40 text-sm tracking-widest uppercase mt-8">
-      Temporada 1 — En emisión
-    </p>
-
-  </div>
-
-</section>
-
-{/* ================= EPISODIOS ================= */}
-
-<section
-  id="episodios"
-  className="px-6 md:px-12 pb-28 border-t border-white/10 pt-24"
->
-
-  <div className="max-w-7xl mx-auto">
-
-    <div className="mb-12">
-
-      <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
-        Últimos episodios
-      </p>
-
-      <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-        Reality Day
-      </h2>
-
-      <p className="text-white/60">
-        Oficios, empresas e instituciones de Chile.
-      </p>
-
-    </div>
-
-    <div className="grid md:grid-cols-3 gap-8">
-
-      {/* EP1 */}
-
-      <a
-        href="https://youtu.be/acC3dyDKqe8"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group"
+      <section
+        id="reality"
+        className="px-6 md:px-12 py-24 border-t border-white/10"
       >
-        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
 
-          <img
-            src="/RD_Caratula_Ep01.png"
-            alt="Reality Day T1 E1"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-          />
+        <div className="max-w-4xl">
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+          <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-5">
+            Serie original
+          </p>
 
-          <div className="absolute bottom-0 p-6">
+          <h2 className="text-4xl md:text-6xl mb-6">
+            Reality Day
+          </h2>
 
-            <h3 className="text-xl mb-2">
-              T1 E1 — El mimbre no espera
-            </h3>
+          <p className="text-white/70 text-xl mb-8">
+            Un día real de trabajo.
+          </p>
 
-            <p className="text-white/60 text-sm">
-              Un día real en un taller familiar de mimbre en Ñuñoa.
-            </p>
+          <p className="text-white/60 leading-8 text-lg mb-10">
+
+            Reality Day sigue durante algunas horas
+            a personas reales mientras trabajan.
+
+            Observamos cómo funcionan oficios,
+            empresas e instituciones en Chile tal como son.
+
+            No intervenimos.
+
+            No dramatizamos.
+
+            No cambiamos nada.
+
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+
+            <span className="border border-white/15 px-4 py-2 text-sm text-white/70">
+              Sin guión
+            </span>
+
+            <span className="border border-white/15 px-4 py-2 text-sm text-white/70">
+              Trabajo real
+            </span>
+
+            <span className="border border-white/15 px-4 py-2 text-sm text-white/70">
+              Sin actuación
+            </span>
+
+            <span className="border border-white/15 px-4 py-2 text-sm text-white/70">
+              Chile cotidiano
+            </span>
 
           </div>
 
         </div>
-      </a>
 
-      {/* EP2 */}
+      </section>
 
-      <a
-        href="https://youtu.be/_xtAoqqaaEQ"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group"
+            {/* ================= EPISODIOS ================= */}
+
+      <section
+        id="episodios"
+        className="px-6 md:px-12 py-24 border-t border-white/10"
       >
-        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
 
-          <img
-            src="/RD_Caratula_Ep02.png"
-            alt="Reality Day T1 E2"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-          />
+        <div className="max-w-7xl mx-auto">
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+          <div className="mb-14">
 
-          <div className="absolute bottom-0 p-6">
+            <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-4">
+              Episodios
+            </p>
 
-            <h3 className="text-xl mb-2">
-              T1 E2 — No era solo mantención
-            </h3>
+            <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+              Historias publicadas
+            </h2>
 
-            <p className="text-white/60 text-sm">
-              Un día real en un taller mecánico de Santiago.
+            <p className="text-white/60 text-lg">
+              Personas reales. Trabajo real. Chile real.
             </p>
 
           </div>
 
-        </div>
-      </a>
+          <div className="grid md:grid-cols-3 gap-8">
 
-      {/* EP3 */}
+            {/* EPISODIO 1 */}
 
-      <a
-        href="https://youtu.be/3VhmLGZGqV4"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group"
-      >
-        <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10">
+            <a
+              href="https://youtu.be/acC3dyDKqe8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
 
-          <img
-            src="/RD_Caratula_Ep03.png"
-            alt="Reality Day T1 E3"
-            className="object-cover w-full h-full group-hover:scale-105 transition duration-700"
-          />
+              <div className="overflow-hidden rounded-2xl border border-white/10">
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <img
+                  src="/RD_Caratula_Ep01.png"
+                  alt="Reality Day Episode 1"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
 
-          <div className="absolute bottom-0 p-6">
+              </div>
 
-            <h3 className="text-xl mb-2">
-              T1 E3 — La Morenita
-            </h3>
+              <div className="pt-5">
 
-            <p className="text-white/60 text-sm">
-              Un día real en una pescadería y restaurante de Pirque.
-            </p>
+                <p className="text-white/40 text-xs uppercase tracking-[0.25em] mb-3">
+                  Episodio 1
+                </p>
+
+                <h3 className="text-xl mb-3">
+                  El mimbre no espera
+                </h3>
+
+                <p className="text-white/55 leading-7 text-sm">
+
+                  Un día dentro de un taller familiar donde
+                  la tradición sigue viva generación tras generación.
+
+                </p>
+
+              </div>
+
+            </a>
+
+            {/* EPISODIO 2 */}
+
+            <a
+              href="https://youtu.be/_xtAoqqaaEQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+
+                <img
+                  src="/RD_Caratula_Ep02.png"
+                  alt="Reality Day Episode 2"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
+
+              </div>
+
+              <div className="pt-5">
+
+                <p className="text-white/40 text-xs uppercase tracking-[0.25em] mb-3">
+                  Episodio 2
+                </p>
+
+                <h3 className="text-xl mb-3">
+                  No era solo mantención
+                </h3>
+
+                <p className="text-white/55 leading-7 text-sm">
+
+                  Un taller mecánico enfrenta un problema
+                  que ningún escáner logra explicar.
+
+                </p>
+
+              </div>
+
+            </a>
+
+            {/* EPISODIO 3 */}
+
+            <a
+              href="https://youtu.be/3VhmLGZGqV4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group"
+            >
+
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+
+                <img
+                  src="/RD_Caratula_Ep03.png"
+                  alt="Reality Day Episode 3"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
+
+              </div>
+
+              <div className="pt-5">
+
+                <p className="text-white/40 text-xs uppercase tracking-[0.25em] mb-3">
+                  Episodio 3
+                </p>
+
+                <h3 className="text-xl mb-3">
+                  La Morenita
+                </h3>
+
+                <p className="text-white/55 leading-7 text-sm">
+
+                  Desde la pescadería hasta la cocina,
+                  un negocio familiar que no se detiene.
+
+                </p>
+
+              </div>
+
+            </a>
 
           </div>
 
         </div>
-      </a>
 
-    </div>
+      </section>
 
-  </div>
-
-</section>
-
-{/* ================= MANIFIESTO ================= */}
-
-<section className="px-6 md:px-12 py-28 border-t border-white/10">
-
-  <div className="max-w-4xl">
-
-    <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-6">
-      Manifiesto
-    </p>
-
-    <h2 className="text-4xl md:text-6xl leading-tight mb-10">
-      Chile no se entiende
-      <br />
-      desde afuera.
-    </h2>
-
-    <p className="text-white/60 text-lg leading-9">
-      Se entiende a través de sus personas,
-      instituciones, empresas, comunidades e historias.
-    </p>
-
-    <p className="text-white/60 text-lg leading-9 mt-6">
-      Tronx Media crea documentales, series y
-      contenidos originales para explorar las distintas
-      realidades que conviven en el país.
-    </p>
-
-    <p className="text-white/60 text-lg leading-9 mt-6">
-      No buscamos explicar Chile.
-    </p>
-
-    <p className="text-white/70 text-lg leading-9 mt-10">
-      Buscamos comprenderlo.
-    </p>
-
-  </div>
-
-</section>
-
-      {/* ================= FUTURO ================= */}
+      {/* ================= ABOUT TRONX MEDIA ================= */}
 
       <section className="px-6 md:px-12 py-24 border-t border-white/10">
 
-  <p className="text-white/40 text-xs tracking-[0.35em] uppercase mb-4">
-    Próximamente
-  </p>
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14">
 
-  <h2 className="text-3xl md:text-5xl mb-6">
-    Nuevas historias.
-  </h2>
+          <div>
 
-  <p className="text-white/60 max-w-2xl leading-8">
-    Reality Day es solo el comienzo.
-  </p>
+            <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-5">
+              Sobre nosotros
+            </p>
 
-  <p className="text-white/60 max-w-2xl leading-8 mt-4">
-    Nuevas series.
-    Nuevos formatos.
-    Nuevas historias.
-  </p>
+            <h2 className="text-4xl md:text-5xl leading-tight">
 
-  <p className="text-white/60 max-w-2xl leading-8 mt-4">
-    Siempre desde Chile.
-  </p>
+              Un medio documental
+              <br />
+              sobre Chile.
 
-</section>
+            </h2>
 
-        </main>
+          </div>
+
+          <div>
+
+            <p className="text-white/60 text-lg leading-8 mb-6">
+
+              Tronx Media es un proyecto editorial independiente
+              dedicado a documentar cómo funciona Chile
+              a través de historias reales.
+
+            </p>
+
+            <p className="text-white/55 leading-8 mb-6">
+
+              Nos interesan las personas,
+              los trabajos invisibles,
+              los oficios,
+              las empresas,
+              las instituciones
+              y las historias que sostienen la vida cotidiana.
+
+            </p>
+
+            <p className="text-white/55 leading-8">
+
+              Creemos que muchas de las historias más importantes
+              ocurren lejos de la televisión,
+              lejos de la política
+              y lejos de los titulares.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+            {/* ================= FUTURE SERIES ================= */}
+
+      <section className="px-6 md:px-12 py-24 border-t border-white/10">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="mb-14">
+
+            <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-4">
+              Próximamente
+            </p>
+
+            <h2 className="text-3xl md:text-5xl font-semibold mb-4">
+              Nuevas series en desarrollo
+            </h2>
+
+            <p className="text-white/60 text-lg">
+              Reality Day es solo el comienzo.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            {/* CRONICAS */}
+
+            <div className="border border-white/10 rounded-2xl p-8">
+
+              <p className="text-white/40 uppercase text-xs tracking-[0.25em] mb-4">
+                Serie 02
+              </p>
+
+              <h3 className="text-3xl mb-5">
+                Crónicas de Chile
+              </h3>
+
+              <p className="text-white/55 leading-8">
+
+                Una serie documental dedicada a explorar
+                acontecimientos, procesos históricos
+                y episodios que explican cómo Chile llegó
+                a convertirse en el país que conocemos hoy.
+
+              </p>
+
+            </div>
+
+            {/* IDOLOS */}
+
+            <div className="border border-white/10 rounded-2xl p-8">
+
+              <p className="text-white/40 uppercase text-xs tracking-[0.25em] mb-4">
+                Serie 03
+              </p>
+
+              <h3 className="text-3xl mb-5">
+                Ídolos
+              </h3>
+
+              <p className="text-white/55 leading-8">
+
+                Conversaciones profundas con las personas
+                que han dejado una huella en Chile.
+
+                Historias sobre éxito,
+                fracaso,
+                legado
+                y decisiones que cambiaron vidas.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= FINAL CTA ================= */}
+
+      <section className="px-6 md:px-12 py-28 border-t border-white/10">
+
+        <div className="max-w-4xl">
+
+          <p className="text-white/40 uppercase tracking-[0.35em] text-xs mb-5">
+            Nuestra visión
+          </p>
+
+          <h2 className="text-4xl md:text-6xl leading-tight mb-10">
+
+            Contar historias reales
+            <br />
+            sobre las personas
+            <br />
+            que hacen funcionar Chile.
+
+          </h2>
+
+          <p className="text-white/60 text-lg leading-9 max-w-3xl">
+
+            Creemos que las historias más importantes
+            muchas veces ocurren lejos de los grandes medios.
+
+            Nuestro trabajo es observar,
+            documentar
+            y contar esas historias con respeto,
+            profundidad
+            y honestidad.
+
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* ================= FOOTER ================= */}
+
+      <footer className="px-6 md:px-12 py-14 border-t border-white/10">
+
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+
+          {/* Left */}
+
+          <div>
+
+            <h3 className="text-xl mb-3">
+              Tronx Media
+            </h3>
+
+            <p className="text-white/40 text-sm leading-7 max-w-md">
+
+              Medio audiovisual independiente
+              dedicado a crear documentales,
+              series originales
+              e historias reales sobre Chile.
+
+            </p>
+
+          </div>
+
+          {/* Right */}
+
+          <div className="flex flex-col gap-3 text-sm text-white/50">
+
+            <a
+              href="https://www.youtube.com/@tronxmedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              YouTube
+            </a>
+
+            <a
+              href="https://www.instagram.com/tronxmedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@tronx.media"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              TikTok
+            </a>
+
+            <a
+              href="https://www.tronxmedia.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              Sitio web
+            </a>
+
+          </div>
+
+        </div>
+
+      </footer>
+
+    </main>
   );
 }
